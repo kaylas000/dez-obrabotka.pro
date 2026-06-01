@@ -1,0 +1,87 @@
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="{{ '/' | relative_url }}" class="breadcrumbs__link">{% include icons/home.svg %} Главная</a>
+    </li>
+    {% if page.url contains '/uslugi/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <a href="{{ '/#services' | relative_url }}" class="breadcrumbs__link">Услуги</a>
+    </li>
+    {% endif %}
+    {% if page.url contains '/blog/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">Блог</span>
+    </li>
+    {% endif %}
+    {% if page.url contains '/faq/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">FAQ</span>
+    </li>
+    {% endif %}
+    {% if page.url contains '/contacts/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">Контакты</span>
+    </li>
+    {% endif %}
+    {% if page.title and page.url contains '/uslugi/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">{{ page.title | replace: " в Пензе", "" }}</span>
+    </li>
+    {% endif %}
+  </ol>
+</nav>
+
+<style>
+.breadcrumbs {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breadcrumbs__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.breadcrumbs__link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumbs__link:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumbs__sep {
+  font-size: var(--text-sm);
+  color: var(--color-border);
+}
+
+.breadcrumbs__current {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+</style>

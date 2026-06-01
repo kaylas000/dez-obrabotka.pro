@@ -1,71 +1,76 @@
 ---
 layout: default
 title: Частые вопросы
-description: Ответы на частые вопросы о дезинсекции. Безопасность препаратов, подготовка помещения, холодный туман, отличие от опрыскивания. Дез Обработка, Пенза.
-style: |
-  .page-header{padding-top:var(--space-7);padding-bottom:var(--space-5)}
-  .page-header h1{margin-bottom:var(--space-3);color:var(--color-accent)}
-  .page-header p{color:var(--color-text_muted);font-size:var(--text-lg)}
-  .faq-list{display:flex;flex-direction:column;gap:var(--space-2);max-width:clamp(280px,100%,800px);padding-bottom:var(--space-7)}
-  .faq-list details{border:1px solid var(--color-border);border-radius:4px;transition:border-color 200ms}
-  .faq-list details:hover,.faq-list details[open]{border-color:var(--color-accent)}
-  .faq-list summary{padding:var(--space-4);cursor:pointer;font-weight:600;font-size:var(--text-base);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--space-3)}
-  .faq-list summary::-webkit-details-marker{display:none}
-  .faq-list summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:var(--text-xl);color:var(--color-accent);flex-shrink:0;transition:transform 200ms}
-  .faq-list details[open] summary::after{content:'−'}
-  .faq-list .faq-answer{padding:0 var(--space-4) var(--space-4);font-size:var(--text-sm);color:var(--color-text_muted);line-height:1.7}
+description: Ответы на частые вопросы о дезинсекции. Безопасность препаратов, подготовка помещения, холодный туман. Дез Обработка, Пенза.
 ---
 
-<section class="page-header" aria-labelledby="page-title">
-  <div class="container">
-    <h1 id="page-title">Частые вопросы</h1>
-    <p>Отвечаем на самые популярные вопросы о дезинсекции</p>
-  </div>
-</section>
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section__header">
+      <span class="section__label">FAQ</span>
+      <h1 style="font-size:var(--text-4xl)">Частые вопросы</h1>
+      <p class="section__subtitle">Всё что нужно знать о дезинсекции холодным туманом.</p>
+    </div>
 
-<section>
-  <div class="container">
-    <div class="faq-list">
+    <div class="accordion">
       <details>
-        <summary>Опасно ли для детей и домашних животных?</summary>
-        <div class="faq-answer">Нет. Мы используем препараты 4-го класса опасности (малоопасные). После проветривания (30–60 минут) в помещении безопасно находиться детям и животным. На время самой обработки рекомендуем выйти из помещения.</div>
+        <summary class="accordion__trigger">Безопасен ли холодный туман для людей и животных?</summary>
+        <div class="accordion__content">Да, полностью. Используем препараты 4-го класса опасности — самые безопасные из существующих. Можно находиться в помещении во время обработки. Без запаха, не вызывает аллергии. Безопасно для детей, кошек, собак и людей с астмой.</div>
       </details>
+
       <details>
-        <summary>Когда можно заходить в помещение после обработки?</summary>
-        <div class="faq-answer">Через 30–60 минут после завершения обработки, когда помещение проветрено. Точное время зависит от площади и количества открытых окон — специалист скажет перед началом работы.</div>
+        <summary class="accordion__trigger">Сколько длится обработка?</summary>
+        <div class="accordion__content">Квартира — 40-60 минут. Частный дом — 1-2 часа в зависимости от площади. После обработки не нужно проветривать или мыть поверхности — препарат продолжает работать.</div>
       </details>
+
       <details>
-        <summary>Нужно ли уезжать из квартиры на время обработки?</summary>
-        <div class="faq-answer">Да, на время распыления препарата и проветривания (примерно 1.5–2.5 часа) лучше выйти из помещения. Специалист предупредит когда можно возвращаться.</div>
+        <summary class="accordion__trigger">Нужно ли готовить помещение к обработке?</summary>
+        <div class="accordion__content">Минимальная подготовка: убрать продукты питания и посуду в шкафы, отодвинуть мебель от стен на 15-20 см, обеспечить доступ специалиста ко всем помещениям. Никакой сложной подготовки не требуется.</div>
       </details>
+
       <details>
-        <summary>Как подготовить помещение к обработке?</summary>
-        <div class="faq-answer">Убрать продукты питания и посуду в шкафы. Накрыть аквариум и отключить фильтр. Отодвинуть мебель от стен на 10–15 см. Обеспечить доступ к плинтусам. Влажная уборка до обработки не нужна.</div>
+        <summary class="accordion__trigger">Нужно ли покидать помещение?</summary>
+        <div class="accordion__content">Нет. Препараты 4-го класса позволяют находиться в помещении. При желании можно выйти на 15-20 минут пока оседает взвесь, но это не обязательно.</div>
       </details>
+
       <details>
-        <summary>Чем холодный туман отличается от обычного опрыскивания?</summary>
-        <div class="faq-answer">Холодный туман создаёт облако микрочастиц (10–50 микрон), которые проникают во все щели, за мебель и в вентиляцию. Опрыскивание наносит раствор крупными каплями и не достаёт до укрытий насекомых. Туман эффективнее и экономичнее по расходу препарата.</div>
+        <summary class="accordion__trigger">Через сколько исчезнут насекомые?</summary>
+        <div class="accordion__content">Первые результаты видны через 24 часа. Массовая гибель — на 2-3 день. Полное исчезновение — в течение 7 дней. Через 21 день проводим контрольный осмотр и при необходимости повторную обработку.</div>
       </details>
+
       <details>
-        <summary>Что делать если насекомые идут от соседей?</summary>
-        <div class="faq-answer">Обработка уничтожает текущую популяцию в вашем помещении. Для защиты от миграции от соседей рекомендуем барьерную обработку — нанесение препарата по периметру квартиры (плинтусы, вентиляция, стояки). Такую обработку можно повторять раз в 3–6 месяцев для профилактики.</div>
+        <summary class="accordion__trigger">Даёте ли вы гарантию?</summary>
+        <div class="accordion__content">Да. Стандартная гарантия — 3 месяца. Расширенная — до 12 месяцев. Всё прописывается в договоре. Если насекомые вернутся в гарантийный период — повторная обработка бесплатно.</div>
       </details>
+
       <details>
-        <summary>Работаете ли с юридическими лицами?</summary>
-        <div class="faq-answer">Да. Заключаем договор, предоставляем акт выполненных работ и все закрывающие документы. Работаем с кафе, ресторанами, офисами, складами, производствами.</div>
+        <summary class="accordion__trigger">Чем холодный туман отличается от опрыскивания?</summary>
+        <div class="accordion__content">Размер частиц. При опрыскивании — 200-500 микрон (крупные капли). При холодном тумане — 10-50 микрон. Мелкие частицы проникают в щели, за плинтусы, в вентиляцию — туда куда капли не долетают. Эффективность холодного тумана в 3-5 раз выше.</div>
       </details>
+
       <details>
-        <summary>Сколько держится эффект после обработки?</summary>
-        <div class="faq-answer">Препарат продолжает действовать до 30 дней после нанесения — этого достаточно чтобы уничтожить всех вылупившихся из яиц особей. После этого помещение остаётся чистым. Для профилактики в многоквартирных домах рекомендуем барьерную обработку раз в 3–6 месяцев.</div>
+        <summary class="accordion__trigger">Остаётся ли запах после обработки?</summary>
+        <div class="accordion__content">Нет. Используемые препараты без запаха. После обработки помещение не требует проветривания. Никаких химических ароматов.</div>
       </details>
+
       <details>
-        <summary>Нужно ли повторять обработку?</summary>
-        <div class="faq-answer">В 90% случаев достаточно одной обработки. Если заражение сильное или насекомые продолжают мигрировать от соседей, может потребоваться повторная обработка через 2–3 недели. Необходимость повторной обработки определяется по результату первой.</div>
+        <summary class="accordion__trigger">Как долго действует эффект?</summary>
+        <div class="accordion__content">Остаточное действие препарата — до 6 недель. Это значит что вылупившиеся из яиц насекомые тоже погибают. Для максимальной защиты рекомендуем профилактическую обработку раз в 3-4 месяца.</div>
       </details>
+
       <details>
-        <summary>Какой препарат вы используете?</summary>
-        <div class="faq-answer">Используем профессиональные инсектициды на водной основе, разрешённые к применению на территории РФ. Все препараты имеют свидетельства о регистрации и сертификаты соответствия. Конкретное средство подбирается под вид насекомого и тип помещения.</div>
+        <summary class="accordion__trigger">Какие препараты вы используете?</summary>
+        <div class="accordion__content">Используем препараты на основе цифлутрина, лямбда-цигалотрина и других современных инсектицидов 4-го класса опасности. Все препараты сертифицированы и разрешены к применению в жилых помещениях на территории РФ.</div>
       </details>
+    </div>
+
+    <div class="cta" style="margin-top:var(--space-7)">
+      <span class="section__label">Остались вопросы?</span>
+      <h3 class="cta__title">Позвоните — ответим</h3>
+      <p class="cta__text">Бесплатная консультация по телефону.</p>
+      <div class="cta__actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (8412) 25-01-77</a>
+      </div>
     </div>
   </div>
 </section>

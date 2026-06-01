@@ -1,42 +1,50 @@
 ---
 layout: default
 title: Контакты
-description: Контакты службы дезинсекции Дез Обработка в Пензе. Телефон, адрес, email. Работаем по Пензе и Пензенской области.
+description: Контакты службы дезинсекции Дез Обработка в Пензе. Телефон, адрес, email. Работаем по Пензе и Пензенской области. Ежедневно, 24/7.
 ---
 
-<section class="page-header" style="padding-top:var(--space-7);padding-bottom:var(--space-5)">
-  <div class="container">
-    <h1 style="color:var(--color-accent);margin-bottom:var(--space-3)">Контакты</h1>
-    <p style="color:var(--color-text_muted);font-size:var(--text-lg)">Свяжитесь с нами любым удобным способом</p>
-  </div>
-</section>
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section__header">
+      <span class="section__label">Контакты</span>
+      <h1 style="font-size:var(--text-4xl)">Свяжитесь с нами</h1>
+      <p class="section__subtitle">Работаем по Пензе и области. Ежедневно, 24/7.</p>
+    </div>
 
-<section style="padding-bottom:var(--space-7)">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:var(--space-6);margin-bottom:var(--space-6)">
-      <div style="border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px">
-        <h3 style="color:var(--color-accent);margin-bottom:var(--space-3)">Телефон</h3>
-        <a href="tel:+78412XXXXXXX" style="font-family:'JetBrains Mono',monospace;font-size:var(--text-xl);font-weight:700;color:var(--color-accent_alt);min-height:48px;display:inline-flex;align-items:center">+7 (8412) XX-XX-XX</a>
-        <p style="color:var(--color-text_muted);font-size:var(--text-sm);margin-top:var(--space-2)">Перезвоним в течение 15 минут</p>
+    <div class="grid grid--2" style="margin-bottom:var(--space-6)">
+      <div class="contact-card">
+        <div class="contact-card__icon">{% include icons/phone.svg %}</div>
+        <div class="contact-card__title">Телефон</div>
+        <a href="tel:+78412250177" class="contact-card__value phone-link">+7 (8412) 25-01-77</a>
       </div>
-      <div style="border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px">
-        <h3 style="color:var(--color-accent);margin-bottom:var(--space-3)">Email</h3>
-        <a href="mailto:info@dez-obrabotka.pro" style="color:var(--color-accent_alt);font-weight:600;font-size:var(--text-base)">info@dez-obrabotka.pro</a>
-        <p style="color:var(--color-text_muted);font-size:var(--text-sm);margin-top:var(--space-2)">Отвечаем в течение рабочего дня</p>
+
+      <div class="contact-card">
+        <div class="contact-card__icon">{% include icons/mail.svg %}</div>
+        <div class="contact-card__title">Email</div>
+        <a href="mailto:info@dez-obrabotka.pro" class="contact-card__value" style="color:var(--color-text)">info@dez-obrabotka.pro</a>
       </div>
-      <div style="border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px">
-        <h3 style="color:var(--color-accent);margin-bottom:var(--space-3)">Адрес</h3>
-        <p style="color:var(--color-text);font-weight:600;font-size:var(--text-base)">г. Пенза</p>
-        <p style="color:var(--color-text_muted);font-size:var(--text-sm);margin-top:var(--space-2)">Пенза и Пензенская область</p>
+
+      <div class="contact-card">
+        <div class="contact-card__icon">{% include icons/map-pin.svg %}</div>
+        <div class="contact-card__title">Адрес</div>
+        <span class="contact-card__value">Пенза, уточняйте адрес при звонке</span>
       </div>
-      <div style="border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px">
-        <h3 style="color:var(--color-accent);margin-bottom:var(--space-3)">Режим работы</h3>
-        <p style="color:var(--color-text);font-weight:600;font-size:var(--text-base)">Ежедневно</p>
-        <p style="color:var(--color-text_muted);font-size:var(--text-sm);margin-top:var(--space-2)">Принимаем звонки с 8:00 до 22:00</p>
+
+      <div class="contact-card">
+        <div class="contact-card__icon">{% include icons/clock.svg %}</div>
+        <div class="contact-card__title">Режим работы</div>
+        <span class="contact-card__value">Ежедневно, 24/7</span>
       </div>
     </div>
-    <div style="border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:var(--color-text_muted);font-size:var(--text-sm)">
-      Карта проезда (будет добавлена)
+
+    <div class="cta">
+      <span class="section__label">Срочно нужна обработка?</span>
+      <h3 class="cta__title">Выезд в день обращения</h3>
+      <p class="cta__text">Позвоните прямо сейчас — приедем в течение часа.</p>
+      <div class="cta__actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (8412) 25-01-77</a>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,87 @@
+{
+  "brand": {
+    "personality": "protective-reliable",
+    "description": "Дез Обработка — служба дезинсекции в Пензе. Холодный туман, безопасные препараты.",
+    "mood": ["secure", "professional", "eco-safe", "clean"],
+    "avoid": [
+      "box-shadows — только тонкие border",
+      "градиенты — чистые плоские цвета",
+      "скругления > 4px",
+      "пастельные тона",
+      "медицинский зелёный — не клиника, а защита",
+      "гарантийные формулировки",
+      "выезд за 24 часа",
+      "горячий туман"
+    ]
+  },
+  "colors": {
+    "palette": {
+      "base": "#0B1120",
+      "surface": "#151E2D",
+      "accent": "#10B981",
+      "accent_alt": "#F59E0B",
+      "text": "#F1F5F9",
+      "text_muted": "#94A3B8",
+      "border": "#1E293B",
+      "success": "#10B981",
+      "danger": "#EF4444"
+    },
+    "rules": {
+      "accent_usage": "accent — заголовки секций, иконки, hover-эффекты",
+      "accent_alt_usage": "accent_alt — только кнопки CTA и цены",
+      "forbidden": ["#0D7C4D", "#3B82F6", "#6366F1", "#8B5CF6", "#EC4899"]
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "rules": {
+      "headings": "font-weight: 700, letter-spacing: -0.02em",
+      "body": "line-height: 1.6, max-width: 65ch",
+      "prices": "JetBrains Mono, accent_alt цвет",
+      "min_size": "14px"
+    }
+  },
+  "layout": {
+    "max_width": "1200px",
+    "spacing": "clamp-шкала от space-1 (0.25rem) до space-8 (8rem)",
+    "patterns": {
+      "hero": "заголовок, подзаголовок, 3 буллета с иконками, accent-линия 4px слева",
+      "cards": "border: 1px solid var(--color-border), padding, hover: border → accent",
+      "tables": ".table-wrapper, sticky header, zebra-строки",
+      "footer": "тёмный фон, 4 колонки на десктопе"
+    }
+  },
+  "interaction": {
+    "transition": "200ms ease",
+    "hover": "border-color → accent",
+    "focus": "3px solid accent outline, offset: 2px"
+  },
+  "components": {
+    "button_primary": {
+      "css": "display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--color-accent_alt);color:var(--color-base);font-weight:700;border:none;min-height:48px;cursor:pointer;border-radius:4px;font-family:Space Grotesk,Inter,sans-serif",
+      "hover": "filter:brightness(1.1);transform:translateY(-1px)"
+    },
+    "button_outline": {
+      "css": "display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border:2px solid var(--color-accent);background:transparent;color:var(--color-accent);font-weight:700;min-height:48px;cursor:pointer;border-radius:4px;font-family:Space Grotesk,Inter,sans-serif",
+      "hover": "background:var(--color-accent);color:var(--color-base)"
+    },
+    "card": {
+      "css": "border:1px solid var(--color-border);padding:var(--space-5);background:var(--color-surface);border-radius:4px;transition:all 200ms",
+      "hover": "border-color:var(--color-accent)"
+    },
+    "price_tag": {
+      "css": "font-family:JetBrains Mono;color:var(--color-accent_alt);font-weight:700"
+    }
+  },
+  "page_types": {
+    "landing": {
+      "structure": "header → hero → services → technology → safety → prices → how-we-work → faq → cta → footer",
+      "hero": "заголовок clamp(2rem,5vw,3.5rem), accent-линия 4px слева, 3 буллета",
+      "tone": "уверенный, экспертный, без запугивания. Без гарантий, без фейк-цифр."
+    }
+  }
+}

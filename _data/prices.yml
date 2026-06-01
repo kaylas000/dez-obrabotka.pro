@@ -1,0 +1,42 @@
+- slug: tarakany
+  name: Уничтожение тараканов
+  price_1k: 2200
+  price_2k: 2900
+  price_3k: 3700
+  price_house: 5000
+- slug: klopy
+  name: Уничтожение клопов
+  price_1k: 2700
+  price_2k: 3500
+  price_3k: 4400
+  price_house: 6000
+- slug: muravi
+  name: Уничтожение муравьёв
+  price_1k: 1800
+  price_2k: 2300
+  price_3k: 2900
+  price_house: 4000
+- slug: blohi
+  name: Уничтожение блох
+  price_1k: 2200
+  price_2k: 2800
+  price_3k: 3500
+  price_house: 4600
+- slug: kleshchi
+  name: Уничтожение клещей
+  price_1k: 2500
+  price_2k: 3200
+  price_3k: 4000
+  price_house: 5200
+- slug: muhi
+  name: Уничтожение мух
+  price_1k: 1600
+  price_2k: 2000
+  price_3k: 2500
+  price_house: 3600
+- slug: gryzuny
+  name: Дератизация (грызуны)
+  price_1k: 3200
+  price_2k: 4200
+  price_3k: 5200
+  price_house: 6500

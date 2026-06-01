@@ -1,36 +1,149 @@
-<footer class="site-footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Дез Обработка</h4>
-        <p>Профессиональная дезинсекция в Пензе и области. Холодный туман, препараты 4-го класса безопасности.</p>
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <a href="{{ '/' | relative_url }}" class="footer__logo">
+          {% include icons/shield.svg %}
+          <span>{{ site.title }}</span>
+        </a>
+        <p class="footer__desc">{{ site.description }}</p>
+        <div class="footer__docs">
+          {% include icons/award.svg %}
+          <span>Препараты 4-го класса безопасности</span>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Услуги</h4>
-        <a href="/uslugi/tarakany/">Тараканы</a>
-        <a href="/uslugi/klopy/">Клопы</a>
-        <a href="/uslugi/muravi/">Муравьи</a>
-        <a href="/uslugi/blohi/">Блохи</a>
-        <a href="/uslugi/kleshchi/">Клещи</a>
-        <a href="/uslugi/muhi/">Мухи</a>
-        <a href="/uslugi/gryzuny/">Грызуны</a>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Услуги</h4>
+        <a href="{{ '/uslugi/tarakany/' | relative_url }}">Тараканы</a>
+        <a href="{{ '/uslugi/klopy/' | relative_url }}">Клопы</a>
+        <a href="{{ '/uslugi/muravi/' | relative_url }}">Муравьи</a>
+        <a href="{{ '/uslugi/blohi/' | relative_url }}">Блохи</a>
+        <a href="{{ '/uslugi/kleshchi/' | relative_url }}">Клещи</a>
+        <a href="{{ '/uslugi/muhi/' | relative_url }}">Мухи</a>
+        <a href="{{ '/uslugi/gryzuny/' | relative_url }}">Грызуны</a>
       </div>
-      <div class="footer-col">
-        <h4>Информация</h4>
-        <a href="/blog/">Блог</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/contacts/">Контакты</a>
-        <a href="/privacy/">Политика конфиденциальности</a>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Информация</h4>
+        <a href="{{ '/blog/' | relative_url }}">Блог</a>
+        <a href="{{ '/faq/' | relative_url }}">FAQ</a>
+        <a href="{{ '/contacts/' | relative_url }}">Контакты</a>
+        <a href="{{ '/privacy/' | relative_url }}">Политика конфиденциальности</a>
       </div>
-      <div class="footer-col">
-        <h4>Контакты</h4>
-        <a href="tel:+78412XXXXXXX" class="footer-phone">+7 (8412) XX-XX-XX</a>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Контакты</h4>
+        <a href="tel:+78412250177" class="footer__phone">+7 (8412) 25-01-77</a>
         <a href="mailto:info@dez-obrabotka.pro">info@dez-obrabotka.pro</a>
-        <p>Пенза и Пензенская область</p>
+        <p class="footer__address">
+          {% include icons/map-pin.svg %}
+          Пенза и Пензенская область
+        </p>
+        <p class="footer__hours">Работаем ежедневно, 24/7</p>
       </div>
+
     </div>
-    <div class="footer-bottom">
-      © {{ 'now' | date: "%Y" }} Дез Обработка. Все права защищены.
+
+    <div class="footer__bottom">
+      <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Все права защищены.</p>
     </div>
   </div>
 </footer>
+
+<style>
+.footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-7);
+}
+
+.footer__brand { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer__logo svg { width: 24px; height: 24px; color: var(--color-accent); }
+
+.footer__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; max-width: 280px; }
+
+.footer__docs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+}
+
+.footer__docs svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.footer__col { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.footer__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.footer__col a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer__col a:hover { color: var(--color-accent); }
+
+.footer__phone {
+  font-family: var(--font-mono) !important;
+  color: var(--color-accent-alt) !important;
+  font-weight: 500;
+}
+
+.footer__address {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footer__address svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.footer__hours { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+.footer__bottom {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.footer__bottom p { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+@media (max-width: 1024px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; gap: var(--space-5); }
+  .footer { padding-block: var(--space-6) var(--space-5); }
+}
+</style>

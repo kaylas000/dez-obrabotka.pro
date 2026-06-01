@@ -1,31 +1,228 @@
-<header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a href="/" class="logo" aria-label="На главную">Дез Обработка</a>
-    <nav class="main-nav" aria-label="Основное меню" role="navigation">
-      <input type="checkbox" id="nav-check">
-      <label for="nav-check" class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-        <span class="hamburger"></span>
+<header class="header" role="banner">
+  <div class="container">
+    <div class="header__inner">
+
+      <a href="{{ '/' | relative_url }}" class="header__logo" aria-label="{{ site.title }} — на главную">
+        {% include icons/shield.svg %}
+        <span class="header__logo-text">{{ site.title }}</span>
+      </a>
+
+      <nav class="header__nav" role="navigation" aria-label="Основное меню">
+        <div class="header__dropdown">
+          <button class="header__link header__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Услуги
+            {% include icons/chevron-right.svg %}
+          </button>
+          <div class="header__dropdown-menu" role="menu">
+            <a href="{{ '/uslugi/tarakany/' | relative_url }}" class="header__dropdown-link" role="menuitem">Тараканы</a>
+            <a href="{{ '/uslugi/klopy/' | relative_url }}" class="header__dropdown-link" role="menuitem">Клопы</a>
+            <a href="{{ '/uslugi/muravi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Муравьи</a>
+            <a href="{{ '/uslugi/blohi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Блохи</a>
+            <a href="{{ '/uslugi/kleshchi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Клещи</a>
+            <a href="{{ '/uslugi/muhi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Мухи</a>
+            <a href="{{ '/uslugi/gryzuny/' | relative_url }}" class="header__dropdown-link" role="menuitem">Грызуны</a>
+          </div>
+        </div>
+        <a href="{{ '/blog/' | relative_url }}" class="header__link">Блог</a>
+        <a href="{{ '/faq/' | relative_url }}" class="header__link">FAQ</a>
+        <a href="{{ '/contacts/' | relative_url }}" class="header__link">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+78412250177" class="phone-link header__phone">+7 (8412) 25-01-77</a>
+        <a href="tel:+78412250177" class="btn btn--primary btn--sm header__cta">Позвонить</a>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="header__toggle-input" aria-label="Открыть меню">
+      <label for="menu-toggle" class="header__toggle-label" aria-hidden="true">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
       </label>
-      <ul class="nav-list">
-        <li class="nav-item has-dropdown">
-          <a href="/#services" class="nav-link">Услуги</a>
-          <ul class="dropdown">
-            <li><a href="/uslugi/tarakany/">Тараканы</a></li>
-            <li><a href="/uslugi/klopy/">Клопы</a></li>
-            <li><a href="/uslugi/muravi/">Муравьи</a></li>
-            <li><a href="/uslugi/blohi/">Блохи</a></li>
-            <li><a href="/uslugi/kleshchi/">Клещи</a></li>
-            <li><a href="/uslugi/muhi/">Мухи</a></li>
-            <li><a href="/uslugi/gryzuny/">Грызуны</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a href="/blog/" class="nav-link">Блог</a></li>
-        <li class="nav-item"><a href="/faq/" class="nav-link">FAQ</a></li>
-        <li class="nav-item"><a href="/contacts/" class="nav-link">Контакты</a></li>
-      </ul>
-    </nav>
-    <div class="header-phone">
-      <a href="tel:+78412XXXXXXX" aria-label="Позвонить">+7 (8412) XX-XX-XX</a>
+
+      <div class="header__mobile-nav" role="dialog" aria-label="Мобильное меню">
+        <nav class="header__mobile-links">
+          <span class="header__mobile-heading">Услуги</span>
+          <a href="{{ '/uslugi/tarakany/' | relative_url }}" class="header__mobile-link">Тараканы</a>
+          <a href="{{ '/uslugi/klopy/' | relative_url }}" class="header__mobile-link">Клопы</a>
+          <a href="{{ '/uslugi/muravi/' | relative_url }}" class="header__mobile-link">Муравьи</a>
+          <a href="{{ '/uslugi/blohi/' | relative_url }}" class="header__mobile-link">Блохи</a>
+          <a href="{{ '/uslugi/kleshchi/' | relative_url }}" class="header__mobile-link">Клещи</a>
+          <a href="{{ '/uslugi/muhi/' | relative_url }}" class="header__mobile-link">Мухи</a>
+          <a href="{{ '/uslugi/gryzuny/' | relative_url }}" class="header__mobile-link">Грызуны</a>
+          <span class="header__mobile-divider"></span>
+          <a href="{{ '/blog/' | relative_url }}" class="header__mobile-link">Блог</a>
+          <a href="{{ '/faq/' | relative_url }}" class="header__mobile-link">FAQ</a>
+          <a href="{{ '/contacts/' | relative_url }}" class="header__mobile-link">Контакты</a>
+          <a href="{{ '/privacy/' | relative_url }}" class="header__mobile-link">Политика конфиденциальности</a>
+        </nav>
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg" style="margin-top: var(--space-5); width: 100%;">
+          {% include icons/phone.svg %}
+          +7 (8412) 25-01-77
+        </a>
+      </div>
+
     </div>
   </div>
 </header>
+
+<style>
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: rgba(11,17,32,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  gap: var(--space-6);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text);
+  flex-shrink: 0;
+}
+
+.header__logo svg { width: 28px; height: 28px; color: var(--color-accent); }
+
+.header__logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header__nav { display: flex; align-items: center; gap: var(--space-1); flex: 1; }
+
+.header__link {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.header__link:hover { color: var(--color-text); background: var(--color-surface); }
+.header__link svg { width: 14px; height: 14px; transition: transform var(--transition); }
+.header__dropdown-toggle:hover svg { transform: rotate(90deg); }
+
+.header__dropdown { position: relative; }
+
+.header__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  min-width: 210px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all var(--transition);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.header__dropdown:hover .header__dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.header__dropdown-link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.header__dropdown-link:hover { color: var(--color-text); background: var(--color-surface-hover); }
+
+.header__actions { display: flex; align-items: center; gap: var(--space-4); flex-shrink: 0; }
+
+.header__toggle-input { display: none; }
+
+.header__toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: var(--space-2);
+  z-index: 200;
+}
+
+.header__toggle-bar { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 1px; transition: transform var(--transition), opacity var(--transition); }
+
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(2) { opacity: 0; }
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.header__mobile-nav {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-base);
+  padding: var(--space-5);
+  overflow-y: auto;
+  z-index: 99;
+}
+
+#menu-toggle:checked ~ .header__mobile-nav { display: flex; flex-direction: column; }
+
+.header__mobile-heading {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.header__mobile-heading:first-child { margin-top: 0; }
+
+.header__mobile-link {
+  display: block;
+  padding: var(--space-3) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition);
+}
+
+.header__mobile-link:hover { color: var(--color-accent); }
+
+.header__mobile-divider { display: block; height: 1px; background: var(--color-border); margin: var(--space-4) 0; }
+
+@media (max-width: 768px) {
+  .header__nav, .header__actions { display: none; }
+  .header__toggle-label { display: flex; margin-left: auto; }
+  .header__inner { gap: var(--space-4); }
+}
+</style>

@@ -1,404 +1,307 @@
 ---
 layout: default
 title: Уничтожение насекомых в Пензе холодным туманом
-description: Профессиональная дезинсекция в Пензе. Холодный туман, препараты 4-го класса безопасности. Уничтожение тараканов, клопов, муравьёв, блох, клещей, мух, грызунов.
+description: Профессиональная дезинсекция в Пензе. Холодный туман, препараты 4-го класса безопасности. Тараканы, клопы, муравьи, блохи, клещи, мухи, грызуны.
 style: |
-  /* === HERO === */
-  .hero{padding-top:var(--space-8);padding-bottom:var(--space-7)}
-  .hero-content{border-left:4px solid var(--color-accent);padding-left:var(--space-5)}
-  .hero h1{margin-bottom:var(--space-4)}
-  .hero-subtitle{font-size:var(--text-lg);color:var(--color-text_muted);margin-bottom:var(--space-5);max-width:55ch}
-  .hero-features{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-5)}
-  .hero-feat{display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text_muted)}
-  .hero-feat-icon{flex-shrink:0;font-size:var(--text-lg);min-width:32px;text-align:center;line-height:1.4}
-  .hero-feat strong{color:var(--color-text);display:block}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center}
-  .hero-phone{display:inline-flex;align-items:center;min-height:48px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:var(--text-lg);color:var(--color-accent_alt);gap:var(--space-2)}
-
-  /* === SECTIONS === */
-  .section{padding-top:var(--space-7);padding-bottom:var(--space-7)}
-  .section--alt{background:var(--color-surface)}
-  .section-header{margin-bottom:var(--space-6)}
-  .section-header h2{margin-bottom:var(--space-2);color:var(--color-accent)}
-  .section-header p{color:var(--color-text_muted);font-size:var(--text-lg)}
-
-  /* === SERVICES === */
-  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:var(--space-4)}
-  .service-card{border:1px solid var(--color-border);padding:var(--space-5);background:var(--color-surface);border-radius:4px;transition:all 200ms;display:flex;flex-direction:column;gap:var(--space-3)}
-  .service-card:hover{border-color:var(--color-accent);transform:translate(-1px,-1px)}
-  .service-icon{font-size:var(--text-2xl);min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center;border:2px solid var(--color-accent);color:var(--color-accent);flex-shrink:0}
-  .service-card h3{font-size:var(--text-lg)}
-  .service-card p{font-size:var(--text-sm);color:var(--color-text_muted)}
-
-  /* === TECHNOLOGY === */
-  .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:var(--space-6)}
-  .tech-block{border:1px solid var(--color-border);padding:var(--space-5);border-radius:4px}
-  .tech-block h3{color:var(--color-accent);margin-bottom:var(--space-3)}
-  .tech-block p,.tech-block li{font-size:var(--text-sm);color:var(--color-text_muted)}
-  .tech-block ul{margin-top:var(--space-3);list-style:none;display:flex;flex-direction:column;gap:var(--space-2)}
-  .tech-block ul li::before{content:'✓ ';color:var(--color-accent);font-weight:700}
-  .tech-placeholder{aspect-ratio:16/9;background:var(--color-border);display:flex;align-items:center;justify-content:center;color:var(--color-text_muted);font-size:var(--text-sm);border-radius:4px;margin-top:var(--space-4)}
-
-  /* === SAFETY === */
-  .safety-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:var(--space-5)}
-  .safety-item{display:flex;gap:var(--space-3);align-items:flex-start;border:1px solid var(--color-border);padding:var(--space-4);border-radius:4px}
-  .safety-icon{font-size:var(--text-xl);min-width:40px;text-align:center}
-  .safety-text h4{margin-bottom:var(--space-1)}
-  .safety-text p{font-size:var(--text-sm);color:var(--color-text_muted)}
-  .certs-placeholder{display:flex;gap:var(--space-4);margin-top:var(--space-5);flex-wrap:wrap}
-  .cert-stub{width:140px;height:180px;border:1px dashed var(--color-border);display:flex;align-items:center;justify-content:center;color:var(--color-text_muted);font-size:var(--text-xs);border-radius:4px;text-align:center}
-
-  /* === PRICES === */
-  .table-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--color-border);border-radius:4px}
-  table{width:100%;min-width:600px;border-collapse:collapse;font-size:var(--text-sm)}
-  th,td{padding:var(--space-3) var(--space-4);text-align:left;border-bottom:1px solid var(--color-border)}
-  th{font-weight:600;background:var(--color-surface);position:sticky;top:0;z-index:1;font-family:'Space Grotesk',Inter,system-ui,sans-serif;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.02em;color:var(--color-accent)}
-  tr:nth-child(even){background:var(--color-surface)}
-  tr:hover{background:rgba(16,185,129,0.04)}
-  .price-cell{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--color-accent_alt);font-size:var(--text-base);white-space:nowrap}
-  .price-note{font-size:var(--text-xs);color:var(--color-text_muted);margin-top:var(--space-3)}
-
-  /* === STEPS === */
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:var(--space-4);counter-reset:step}
-  .step{position:relative;border:1px solid var(--color-border);padding:var(--space-5);counter-increment:step;border-radius:4px;transition:border-color 200ms}
-  .step:hover{border-color:var(--color-accent)}
-  .step::before{content:counter(step);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:var(--text-2xl);color:var(--color-accent);display:block;margin-bottom:var(--space-3)}
-  .step h4{margin-bottom:var(--space-2)}
-  .step p{font-size:var(--text-sm);color:var(--color-text_muted)}
-
-  /* === FAQ === */
-  .faq-list{display:flex;flex-direction:column;gap:var(--space-2);max-width:clamp(280px,100%,800px)}
-  .faq-list details{border:1px solid var(--color-border);border-radius:4px;transition:border-color 200ms}
-  .faq-list details:hover,.faq-list details[open]{border-color:var(--color-accent)}
-  .faq-list summary{padding:var(--space-4);cursor:pointer;font-weight:600;font-size:var(--text-base);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--space-3)}
-  .faq-list summary::-webkit-details-marker{display:none}
-  .faq-list summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:var(--text-xl);color:var(--color-accent);flex-shrink:0;transition:transform 200ms}
-  .faq-list details[open] summary::after{content:'−'}
-  .faq-list .faq-answer{padding:0 var(--space-4) var(--space-4);font-size:var(--text-sm);color:var(--color-text_muted);line-height:1.7}
-
-  /* === CTA === */
-  .cta-box{border:2px solid var(--color-accent);padding:var(--space-7);text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--space-4);border-radius:4px}
-  .cta-box h2{margin-bottom:0}
-  .cta-box p{color:var(--color-text_muted);font-size:var(--text-lg)}
-  .cta-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;align-items:center}
-  .cta-phone{font-family:'JetBrains Mono',monospace;font-size:var(--text-xl);font-weight:700;color:var(--color-accent_alt);display:inline-flex;align-items:center;min-height:48px}
-
-  /* === RESPONSIVE === */
-  @media (min-width: 640px){
-    .hero-content{padding-left:var(--space-6)}
-  }
-  @media (min-width: 1024px){
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center}
-    .hero-features{display:grid;grid-template-columns:1fr;gap:var(--space-4)}
-  }
+  .hero{min-height:70vh;display:flex;align-items:center;padding-top:var(--space-9);padding-bottom:var(--space-9)}
+  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-7);align-items:center}
+  .hero-features{display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-6)}
+  .hero-feature{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted)}
+  .hero-feature svg{flex-shrink:0;width:20px;height:20px;color:var(--color-accent)}
+  .hero-visual{display:flex;align-items:center;justify-content:center}
+  .hero-visual-inner{width:100%;aspect-ratio:1;max-width:420px;background:radial-gradient(circle at center,rgba(16,185,129,0.08) 0%,transparent 70%);border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+  .hero-visual-inner::after{content:'';position:absolute;inset:16px;border:1px dashed rgba(16,185,129,0.15);border-radius:50%}
+  .hero-icon{width:80px;height:80px;color:var(--color-accent);opacity:0.7}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-4)}
+  .tech-panel{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-6)}
+  .tech-panel h4{display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3)}
+  .tech-panel h4 svg{width:20px;height:20px;color:var(--color-accent)}
+  .tech-panel p{font-size:var(--text-sm)}
+  .safety-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4)}
+  .safety-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-5);text-align:center}
+  .safety-card svg{width:40px;height:40px;color:var(--color-accent);margin:0 auto var(--space-4)}
+  .safety-card h4{font-size:var(--text-base);margin-bottom:var(--space-2)}
+  .safety-card p{font-size:var(--text-sm)}
+  @media(max-width:1024px){.hero .container{grid-template-columns:1fr}.hero-visual{display:none}.safety-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:768px){.services-grid{grid-template-columns:1fr}.safety-grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.hero{min-height:auto}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}}
 ---
 
-  <!-- HERO -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <h1 id="hero-title">Профессиональная дезинсекция в&nbsp;Пензе и&nbsp;области</h1>
-        <p class="hero-subtitle">Уничтожение насекомых холодным туманом. Безопасные сертифицированные препараты 4-го класса. Работаем официально по договору.</p>
-        <div class="hero-features">
-          <div class="hero-feat">
-            <span class="hero-feat-icon" aria-hidden="true">🧊</span>
-            <span><strong>Холодный туман</strong> — микрочастицы 10–50 мкм проникают во все щели, за мебель и в вентиляцию. Равномерное покрытие без потёков.</span>
-          </div>
-          <div class="hero-feat">
-            <span class="hero-feat-icon" aria-hidden="true">🛡️</span>
-            <span><strong>Препараты 4-го класса</strong> — малоопасные вещества, безопасны для людей и животных. Без запаха после проветривания.</span>
-          </div>
-          <div class="hero-feat">
-            <span class="hero-feat-icon" aria-hidden="true">📋</span>
-            <span><strong>Работаем официально</strong> — договор, акт выполненных работ, все закрывающие документы для физических и юридических лиц.</span>
-          </div>
-        </div>
-        <div class="hero-actions">
-          <a href="tel:+78412XXXXXXX" class="btn-primary">Вызвать специалиста</a>
-          <a href="tel:+78412XXXXXXX" class="hero-phone">+7 (8412) XX-XX-XX</a>
-        </div>
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__content reveal">
+      <h1 class="hero__title">Уничтожение насекомых<br>холодным туманом в Пензе</h1>
+      <p class="hero__subtitle">Безопасно, эффективно, официально. Препараты 4-го класса — можно находиться в помещении во время обработки.</p>
+      <div class="hero-features">
+        <div class="hero-feature">{% include icons/check.svg %} Холодный туман — проникает во все щели</div>
+        <div class="hero-feature">{% include icons/check.svg %} Препараты 4-го класса безопасности</div>
+        <div class="hero-feature">{% include icons/check.svg %} Работаем официально, даём гарантию</div>
       </div>
-      <div></div>
+      <div class="hero__actions hero-actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (8412) 25-01-77</a>
+        <a href="#services" class="btn btn--outline btn--lg">Смотреть услуги</a>
+      </div>
     </div>
-  </section>
+    <div class="hero-visual reveal">
+      <div class="hero-visual-inner">
+        {% include icons/shield.svg %}
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="section section--alt" aria-labelledby="services-title" id="services">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="services-title">Каких насекомых уничтожаем</h2>
-        <p>Работаем со всеми видами бытовых вредителей в Пензе и области</p>
-      </div>
-      <div class="services-grid">
-        <a href="/uslugi/tarakany/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🪳</div>
-          <h3>Тараканы</h3>
-          <p>Рыжие и чёрные. Уничтожение популяции за&nbsp;1–2&nbsp;обработки. Препарат проникает в&nbsp;щёлки и&nbsp;за&nbsp;плинтусы.</p>
-        </a>
-        <a href="/uslugi/klopy/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🪲</div>
-          <h3>Клопы</h3>
-          <p>Постельные клопы. Холодный туман проникает в&nbsp;складки мебели, под&nbsp;матрас, в&nbsp;розетки.</p>
-        </a>
-        <a href="/uslugi/muravi/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🐜</div>
-          <h3>Муравьи</h3>
-          <p>Фараоновы и садовые. Уничтожение колонии вместе с&nbsp;маткой. Препарат проходит по&nbsp;муравьиным тропам к&nbsp;гнезду.</p>
-        </a>
-        <a href="/uslugi/blohi/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🦗</div>
-          <h3>Блохи</h3>
-          <p>Земляные и постельные. Обработка пола, плинтусов и&nbsp;ковровых покрытий холодным туманом.</p>
-        </a>
-        <a href="/uslugi/kleshchi/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🕷️</div>
-          <h3>Клещи</h3>
-          <p>Иксодовые и пылевые. Обработка помещений и&nbsp;прилегающей территории. Барьерная защита по&nbsp;периметру.</p>
-        </a>
-        <a href="/uslugi/muhi/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🪰</div>
-          <h3>Мухи</h3>
-          <p>Комнатные и дрозофилы. Обработка оконных и&nbsp;дверных проёмов. Защита на&nbsp;весь сезон.</p>
-        </a>
-        <a href="/uslugi/gryzuny/" class="service-card">
-          <div class="service-icon" aria-hidden="true">🐭</div>
-          <h3>Грызуны</h3>
-          <p>Крысы и мыши. Дератизация помещений. Механические барьеры и&nbsp;родентициды в&nbsp;недоступных местах.</p>
-        </a>
-      </div>
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Услуги</span>
+      <h2 class="section__title">Уничтожаем любых вредителей</h2>
+      <p class="section__subtitle">Холодный туман справляется там, где обычные средства бессильны.</p>
     </div>
-  </section>
 
-  <!-- TECHNOLOGY -->
-  <section class="section" aria-labelledby="tech-title" id="technology">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="tech-title">Холодный туман — современный метод дезинсекции</h2>
-        <p>Почему это эффективнее обычного опрыскивания</p>
-      </div>
-      <div class="tech-grid">
-        <div class="tech-block">
-          <h3>Как работает</h3>
-          <p>Генератор холодного тумана превращает рабочий раствор в&nbsp;облако микрочастиц размером 10–50&nbsp;микрон. Частицы находятся в&nbsp;воздухе до&nbsp;нескольких часов и&nbsp;оседают на&nbsp;всех поверхностях.</p>
-          <ul>
-            <li>Проникает в щели, стыки, за плинтусы и мебель</li>
-            <li>Равномерное покрытие — без потёков и разводов</li>
-            <li>Время обработки — 40–90 минут в зависимости от площади</li>
-          </ul>
-        </div>
-        <div class="tech-block">
-          <h3>Преимущества перед опрыскиванием</h3>
-          <p>При ручном опрыскивании раствор ложится каплями и&nbsp;не&nbsp;попадает в&nbsp;труднодоступные места. Холодный туман решает эту проблему.</p>
-          <ul>
-            <li>Меньше расход препарата — экономичнее</li>
-            <li>Глубже проникновение — достаёт до укрытий насекомых</li>
-            <li>Без разводов на мебели и обоях</li>
-            <li>Быстрее — вся квартира за один цикл</li>
-          </ul>
-          <div class="tech-placeholder" aria-label="Место для фото оборудования">Фото оборудования</div>
-        </div>
-      </div>
+    <div class="services-grid">
+      <a href="{{ '/uslugi/tarakany/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/bug.svg %}</div>
+        <h3 class="service-card__title">Тараканы</h3>
+        <p class="service-card__desc">Профессиональное уничтожение тараканов холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 2200 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/klopy/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/target.svg %}</div>
+        <h3 class="service-card__title">Клопы</h3>
+        <p class="service-card__desc">Профессиональное уничтожение клопов холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 2700 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/muravi/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/bug.svg %}</div>
+        <h3 class="service-card__title">Муравьи</h3>
+        <p class="service-card__desc">Профессиональное уничтожение муравьёв холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 1800 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/blohi/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/droplet.svg %}</div>
+        <h3 class="service-card__title">Блохи</h3>
+        <p class="service-card__desc">Профессиональное уничтожение блох холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 2200 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/kleshchi/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/target.svg %}</div>
+        <h3 class="service-card__title">Клещи</h3>
+        <p class="service-card__desc">Профессиональное уничтожение клещей холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 2500 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/muhi/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/droplet.svg %}</div>
+        <h3 class="service-card__title">Мухи</h3>
+        <p class="service-card__desc">Профессиональное уничтожение мух холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 1600 ₽</span>
+      </a>
+      <a href="{{ '/uslugi/gryzuny/' | relative_url }}" class="service-card reveal">
+        <div class="service-card__icon">{% include icons/tool.svg %}</div>
+        <h3 class="service-card__title">Грызуны</h3>
+        <p class="service-card__desc">Профессиональное уничтожение грызунов холодным туманом. Гарантия до 12 месяцев.</p>
+        <span class="service-card__price">от 3200 ₽</span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SAFETY -->
-  <section class="section section--alt" aria-labelledby="safety-title" id="safety">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="safety-title">Безопасность для вас и ваших близких</h2>
-        <p>Используем только сертифицированные препараты 4-го класса опасности</p>
-      </div>
-      <div class="safety-grid">
-        <div class="safety-item">
-          <span class="safety-icon" aria-hidden="true">🔬</span>
-          <div class="safety-text">
-            <h4>4-й класс опасности — малоопасные вещества</h4>
-            <p>По государственной классификации: 1-й класс — чрезвычайно опасные, 4-й — малоопасные (как поваренная соль). Наши препараты относятся к&nbsp;4-му классу.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon" aria-hidden="true">👶</span>
-          <div class="safety-text">
-            <h4>Без вреда для детей и животных</h4>
-            <p>После проветривания в помещении безопасно находиться детям и домашним животным. Препарат не накапливается в организме.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon" aria-hidden="true">🌿</span>
-          <div class="safety-text">
-            <h4>Без запаха после проветривания</h4>
-            <p>Современные препараты на водной основе не оставляют запаха. Достаточно проветрить помещение 30–60 минут после обработки.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon" aria-hidden="true">🛋️</span>
-          <div class="safety-text">
-            <h4>Не портит мебель и покрытия</h4>
-            <p>Раствор на водной основе не оставляет пятен на обоях, мебели, текстиле и напольных покрытиях после высыхания.</p>
-          </div>
-        </div>
-      </div>
-      <div class="certs-placeholder" aria-label="Место для сертификатов">
-        <div class="cert-stub">Сертификат<br>соответствия</div>
-        <div class="cert-stub">Декларация<br>о соответствии</div>
-        <div class="cert-stub">Свидетельство<br>СРО</div>
-      </div>
+<!-- Technology -->
+<section class="section section--sm">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Технология</span>
+      <h2 class="section__title">Холодный туман — как это работает</h2>
+      <p class="section__subtitle">Единственный метод, который гарантированно уничтожает насекомых во всех стадиях развития.</p>
     </div>
-  </section>
 
-  <!-- PRICES -->
-  <section class="section" aria-labelledby="prices-title" id="prices">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="prices-title">Стоимость дезинсекции</h2>
-        <p>Фиксированные цены, без скрытых доплат</p>
+    <div class="columns reveal">
+      <div class="tech-panel">
+        <h4>{% include icons/droplet.svg %} Генератор холодного тумана</h4>
+        <p>Препарат разбивается на частицы размером 10-50 микрон. Облако проникает во все щели, за мебель, под плинтусы — туда куда не достать спреем.</p>
       </div>
-      <div class="table-wrapper" role="region" aria-label="Таблица цен на дезинсекцию" tabindex="0">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Услуга</th>
-              <th scope="col">1-комн.</th>
-              <th scope="col">2-комн.</th>
-              <th scope="col">3-комн.</th>
-              <th scope="col">Дом до 100 м²</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Уничтожение тараканов</td>
-              <td class="price-cell">2 200 ₽</td>
-              <td class="price-cell">2 900 ₽</td>
-              <td class="price-cell">3 700 ₽</td>
-              <td class="price-cell">5 000 ₽</td>
-            </tr>
-            <tr>
-              <td>Уничтожение клопов</td>
-              <td class="price-cell">2 700 ₽</td>
-              <td class="price-cell">3 500 ₽</td>
-              <td class="price-cell">4 400 ₽</td>
-              <td class="price-cell">6 000 ₽</td>
-            </tr>
-            <tr>
-              <td>Уничтожение муравьёв</td>
-              <td class="price-cell">1 800 ₽</td>
-              <td class="price-cell">2 300 ₽</td>
-              <td class="price-cell">2 900 ₽</td>
-              <td class="price-cell">4 000 ₽</td>
-            </tr>
-            <tr>
-              <td>Уничтожение блох</td>
-              <td class="price-cell">2 200 ₽</td>
-              <td class="price-cell">2 800 ₽</td>
-              <td class="price-cell">3 500 ₽</td>
-              <td class="price-cell">4 600 ₽</td>
-            </tr>
-            <tr>
-              <td>Уничтожение клещей</td>
-              <td class="price-cell">2 500 ₽</td>
-              <td class="price-cell">3 200 ₽</td>
-              <td class="price-cell">4 000 ₽</td>
-              <td class="price-cell">5 200 ₽</td>
-            </tr>
-            <tr>
-              <td>Уничтожение мух</td>
-              <td class="price-cell">1 600 ₽</td>
-              <td class="price-cell">2 000 ₽</td>
-              <td class="price-cell">2 500 ₽</td>
-              <td class="price-cell">3 600 ₽</td>
-            </tr>
-            <tr>
-              <td>Дератизация (грызуны)</td>
-              <td class="price-cell">3 200 ₽</td>
-              <td class="price-cell">4 200 ₽</td>
-              <td class="price-cell">5 200 ₽</td>
-              <td class="price-cell">6 500 ₽</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="tech-panel">
+        <h4>{% include icons/target.svg %} Трёхфазное воздействие</h4>
+        <p>Препарат действует сразу: контактно (насекомое касается), кишечно (поедает) и фумигантно (дышит). Это исключает выживание даже скрытых особей.</p>
       </div>
-      <p class="price-note">Цены указаны за одну обработку. Для помещений большей площади и нестандартных планировок — уточняйте по телефону.</p>
     </div>
-  </section>
 
-  <!-- HOW WE WORK -->
-  <section class="section section--alt" aria-labelledby="steps-title" id="how-we-work">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="steps-title">Как проходит обработка</h2>
-        <p>4 шага до полного избавления от насекомых</p>
+    <div class="columns reveal" style="margin-top:var(--space-5)">
+      <div class="tech-panel">
+        <h4>{% include icons/clock.svg %} Быстро и надолго</h4>
+        <p>Обработка занимает 40-60 минут. Результат заметен в первые сутки. Остаточное действие — до 6 недель. Повторная обработка через 21 день закрепляет эффект.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <h4>Заявка</h4>
-          <p>Звоните или оставляете заявку. Консультируем по методу обработки, стоимости и подготовке помещения. Согласовываем удобную дату.</p>
-        </div>
-        <div class="step">
-          <h4>Подготовка</h4>
-          <p>Даём рекомендации что убрать и накрыть перед приездом специалиста. Сложной подготовки не требуется — справитесь за 15–20 минут.</p>
-        </div>
-        <div class="step">
-          <h4>Обработка</h4>
-          <p>Специалист приезжает с генератором холодного тумана. Обработка занимает 40–90 минут в зависимости от площади. После — проветривание.</p>
-        </div>
-        <div class="step">
-          <h4>Рекомендации</h4>
-          <p>Рассказываем когда можно заходить в помещение, как проводить уборку после обработки, на что обратить внимание в первые дни.</p>
-        </div>
+      <div class="tech-panel">
+        <h4>{% include icons/shield.svg %} Безопасность 4-го класса</h4>
+        <p>Препараты относятся к малоопасным веществам. Не нужно покидать помещение на время обработки. Без запаха, не портит мебель и покрытия.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="section" aria-labelledby="faq-title" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="faq-title">Частые вопросы</h2>
-        <p>Отвечаем на самые популярные вопросы о дезинсекции</p>
+<!-- Safety -->
+<section class="section">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Безопасность</span>
+      <h2 class="section__title">Заботимся о вашем здоровье</h2>
+      <p class="section__subtitle">Сертифицированные препараты и строгий протокол обработки.</p>
+    </div>
+
+    <div class="safety-grid">
+      <div class="safety-card reveal">
+        {% include icons/award.svg %}
+        <h4>4-й класс опасности</h4>
+        <p>Максимально безопасные препараты. Можно находиться в помещении.</p>
       </div>
-      <div class="faq-list">
-        <details>
-          <summary>Опасно ли для детей и домашних животных?</summary>
-          <div class="faq-answer">Нет. Мы используем препараты 4-го класса опасности (малоопасные). После проветривания (30–60 минут) в помещении безопасно находиться детям и животным. На время самой обработки рекомендуем выйти из помещения.</div>
-        </details>
-        <details>
-          <summary>Когда можно заходить в помещение после обработки?</summary>
-          <div class="faq-answer">Через 30–60 минут после завершения обработки, когда помещение проветрено. Точное время зависит от площади и количества открытых окон — специалист скажет перед началом работы.</div>
-        </details>
-        <details>
-          <summary>Нужно ли уезжать из квартиры на время обработки?</summary>
-          <div class="faq-answer">Да, на время распыления препарата и проветривания (примерно 1.5–2.5 часа) лучше выйти из помещения. Специалист предупредит когда можно возвращаться.</div>
-        </details>
-        <details>
-          <summary>Как подготовить помещение к обработке?</summary>
-          <div class="faq-answer">Убрать продукты питания и посуду в шкафы. Накрыть аквариум и отключить фильтр. Отодвинуть мебель от стен на 10–15 см. Обеспечить доступ к плинтусам. Влажная уборка до обработки не нужна.</div>
-        </details>
-        <details>
-          <summary>Чем холодный туман отличается от обычного опрыскивания?</summary>
-          <div class="faq-answer">Холодный туман создаёт облако микрочастиц (10–50 микрон), которые проникают во все щели, за мебель и в вентиляцию. Опрыскивание наносит раствор крупными каплями и не достаёт до укрытий насекомых. Туман эффективнее и экономичнее по расходу препарата.</div>
-        </details>
-        <details>
-          <summary>Что делать если насекомые идут от соседей?</summary>
-          <div class="faq-answer">Обработка уничтожает текущую популяцию в вашем помещении. Для защиты от миграции от соседей рекомендуем барьерную обработку — нанесение препарата по периметру квартиры (плинтусы, вентиляция, стояки). Такую обработку можно повторять раз в 3–6 месяцев для профилактики.</div>
-        </details>
-        <details>
-          <summary>Работаете ли с юридическими лицами?</summary>
-          <div class="faq-answer">Да. Заключаем договор, предоставляем акт выполненных работ и все закрывающие документы. Работаем с кафе, ресторанами, офисами, складами, производствами.</div>
-        </details>
+      <div class="safety-card reveal">
+        {% include icons/document.svg %}
+        <h4>Сертификаты</h4>
+        <p>Все препараты имеют свидетельства о государственной регистрации.</p>
+      </div>
+      <div class="safety-card reveal">
+        {% include icons/users.svg %}
+        <h4>Без вреда для людей</h4>
+        <p>Безопасно для детей, животных, людей с аллергией и астмой.</p>
+      </div>
+      <div class="safety-card reveal">
+        {% include icons/tool.svg %}
+        <h4>Профессиональное оборудование</h4>
+        <p>Шведские генераторы холодного тумана. Точная дозировка.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="section" id="cta" aria-labelledby="cta-title">
-    <div class="container">
-      <div class="cta-box">
-        <h2 id="cta-title">Остались вопросы?</h2>
-        <p>Позвоните — проконсультируем по стоимости и методу обработки вашего помещения</p>
-        <div class="cta-actions">
-          <a href="tel:+78412XXXXXXX" class="cta-phone">+7 (8412) XX-XX-XX</a>
-          <a href="tel:+78412XXXXXXX" class="btn-primary">Позвонить</a>
+<!-- Prices -->
+<section class="section section--sm">
+  <div class="container">
+    <div class="section__header reveal">
+      <span class="section__label">Цены</span>
+      <h2 class="section__title">Прозрачные цены</h2>
+      <p class="section__subtitle">Стоимость зависит от типа помещения. Точная цена — после осмотра.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Вредитель</th>
+            <th>1-комн. квартира</th>
+            <th>2-комн. квартира</th>
+            <th>3-комн. квартира</th>
+            <th>Частный дом</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in site.data.prices %}
+          <tr>
+            <td>
+              <a href="{{ '/uslugi/' | append: item.slug | append: '/' | relative_url }}" style="color:var(--color-text);text-decoration:none">
+                {{ item.name }}
+              </a>
+            </td>
+            <td class="price">{{ item.price_1k }} ₽</td>
+            <td class="price">{{ item.price_2k }} ₽</td>
+            <td class="price">{{ item.price_3k }} ₽</td>
+            <td class="price">{{ item.price_house }} ₽</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- How We Work -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section__header reveal">
+      <span class="section__label">Как мы работаем</span>
+      <h2 class="section__title">4 шага к чистоте</h2>
+    </div>
+
+    <div class="steps">
+      <div class="steps__item reveal">
+        <div class="steps__item-content">
+          <h4>Заявка и консультация</h4>
+          <p>Звоните или оставляете заявку. Определяем вид вредителя, площадь, степень заражения. Называем точную цену.</p>
+        </div>
+      </div>
+      <div class="steps__item reveal">
+        <div class="steps__item-content">
+          <h4>Осмотр и подготовка</h4>
+          <p>Приезжаем в удобное время. Осматриваем помещение. Просим убрать продукты, посуду, личные вещи. Никакой сложной подготовки.</p>
+        </div>
+      </div>
+      <div class="steps__item reveal">
+        <div class="steps__item-content">
+          <h4>Обработка холодным туманом</h4>
+          <p>Генератор создаёт облако препарата. Обработка 40-60 минут. Без запаха. Не нужно покидать помещение.</p>
+        </div>
+      </div>
+      <div class="steps__item reveal">
+        <div class="steps__item-content">
+          <h4>Контроль и гарантия</h4>
+          <p>Результат виден через 24 часа. Повторный визит через 21 день. Даём гарантию до 12 месяцев в зависимости от вида.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--sm">
+  <div class="container container--narrow">
+    <div class="section__header reveal">
+      <span class="section__label">FAQ</span>
+      <h2 class="section__title">Частые вопросы</h2>
+    </div>
+
+    <div class="accordion reveal">
+      <details>
+        <summary class="accordion__trigger">Безопасен ли холодный туман для людей?</summary>
+        <div class="accordion__content">Да. Мы используем препараты 4-го класса опасности — это малоопасные вещества. Можно находиться в помещении во время обработки. Препараты без запаха, не вызывают аллергии.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Сколько длится обработка?</summary>
+        <div class="accordion__content">Обработка квартиры занимает 40-60 минут. Частного дома — 1-2 часа в зависимости от площади. Результат заметен уже через сутки.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Нужно ли уходить из дома на время обработки?</summary>
+        <div class="accordion__content">Нет. Наши препараты 4-го класса безопасности позволяют находиться в помещении. Рекомендуем только убрать продукты и посуду.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Даёте ли вы гарантию?</summary>
+        <div class="accordion__content">Да. Стандартная гарантия — 3 месяца. При сильном заражении или по вашему желанию — до 12 месяцев. В гарантийный период повторная обработка бесплатно.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Через сколько исчезнут насекомые?</summary>
+        <div class="accordion__content">Первые результаты видны через 24 часа. Полное исчезновение — в течение 3-7 дней. Это зависит от вида насекомого и степени заражения.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Остаётся ли запах после обработки?</summary>
+        <div class="accordion__content">Нет. Используемые препараты не имеют запаха. Помещение не требует проветривания после обработки.</div>
+      </details>
+      <details>
+        <summary class="accordion__trigger">Что входит в стоимость?</summary>
+        <div class="accordion__content">В стоимость входит: выезд специалиста, осмотр, обработка холодным туманом (включая препарат), контрольный визит через 21 день, гарантия.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container container--narrow">
+    <div class="cta reveal">
+      <span class="section__label">Начните сейчас</span>
+      <h3 class="cta__title">Избавьтесь от насекомых сегодня</h3>
+      <p class="cta__text">Позвоните или оставьте заявку. Консультация бесплатно. Выезд в день обращения.</p>
+      <div class="cta__actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (8412) 25-01-77</a>
+      </div>
+    </div>
+  </div>
+</section>

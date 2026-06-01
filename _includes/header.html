@@ -164,22 +164,46 @@
 .header__actions { display: flex; align-items: center; gap: var(--space-4); flex-shrink: 0; }
 .header__actions .btn { font-family: var(--font-display); letter-spacing: -0.01em; }
 
-.header__toggle-input { display: none; }
+.header__toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 
 .header__toggle-label {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  padding: var(--space-2);
   z-index: 200;
+  position: relative;
 }
 
-.header__toggle-bar { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 1px; transition: transform var(--transition), opacity var(--transition); }
+.header__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
 
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(2) { opacity: 0; }
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .header__mobile-nav {
   display: none;
@@ -188,13 +212,18 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: calc(100dvh - var(--header-height));
   background: var(--color-base);
   padding: var(--space-5);
   overflow-y: auto;
   z-index: 99;
+  overscroll-behavior: contain;
 }
 
-#menu-toggle:checked ~ .header__mobile-nav { display: flex; flex-direction: column; }
+#menu-toggle:checked ~ .header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
 
 .header__mobile-heading {
   display: block;
@@ -230,3 +259,15 @@
   .header__inner { gap: var(--space-4); }
 }
 </style>
+
+<script>
+(function() {
+  var toggle = document.getElementById('menu-toggle');
+  var links = document.querySelectorAll('.header__mobile-link');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      toggle.checked = false;
+    });
+  }
+})();
+</script>

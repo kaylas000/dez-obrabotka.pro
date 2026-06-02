@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="7"/><path d="M8 8l-1.5-2"/><path d="M16 8l1.5-2"/><path d="M6 13c-.5 2.5-.5 5 0 8"/><path d="M18 13c.5 2.5.5 5 0 8"/><circle cx="10" cy="10" r="1"/><circle cx="14" cy="10" r="1"/><path d="M9 14h6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Bedbug profile: flat round body, small pointed head, 3 legs -->
+  <circle cx="17" cy="10" r="6"/>
+  <path d="M11 10c0-3 1-5 3-6"/>
+  <circle cx="11" cy="8" r="1.5"/>
+  <path d="M10 8l-2-2"/>
+  <path d="M10 9l-3-1"/>
+  <path d="M13 14l1 3"/>
+  <path d="M16 15l2 3"/>
+  <path d="M19 13l3 1"/>
+  <path d="M12 7l-1-2"/>
+  <path d="M15 6l1-2"/>
+</svg>

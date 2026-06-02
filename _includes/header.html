@@ -8,6 +8,7 @@
       </a>
 
       <nav class="header__nav" role="navigation" aria-label="Основное меню">
+        <a href="{{ '/' | relative_url }}" class="header__link">Главная</a>
         <div class="header__dropdown">
           <button class="header__link header__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
             Услуги
@@ -21,6 +22,8 @@
             <a href="{{ '/uslugi/kleshchi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Клещи</a>
             <a href="{{ '/uslugi/muhi/' | relative_url }}" class="header__dropdown-link" role="menuitem">Мухи</a>
             <a href="{{ '/uslugi/gryzuny/' | relative_url }}" class="header__dropdown-link" role="menuitem">Грызуны</a>
+            <a href="{{ '/uslugi/komary/' | relative_url }}" class="header__dropdown-link" role="menuitem">Комары</a>
+            <a href="{{ '/uslugi/osy/' | relative_url }}" class="header__dropdown-link" role="menuitem">Осы</a>
           </div>
         </div>
         <a href="{{ '/blog/' | relative_url }}" class="header__link">Блог</a>
@@ -44,6 +47,7 @@
 
       <div class="header__mobile-nav" role="dialog" aria-label="Мобильное меню">
         <nav class="header__mobile-links">
+          <a href="{{ '/' | relative_url }}" class="header__mobile-link">Главная</a>
           <span class="header__mobile-heading">Услуги</span>
           <a href="{{ '/uslugi/tarakany/' | relative_url }}" class="header__mobile-link">Тараканы</a>
           <a href="{{ '/uslugi/klopy/' | relative_url }}" class="header__mobile-link">Клопы</a>
@@ -52,6 +56,8 @@
           <a href="{{ '/uslugi/kleshchi/' | relative_url }}" class="header__mobile-link">Клещи</a>
           <a href="{{ '/uslugi/muhi/' | relative_url }}" class="header__mobile-link">Мухи</a>
           <a href="{{ '/uslugi/gryzuny/' | relative_url }}" class="header__mobile-link">Грызуны</a>
+          <a href="{{ '/uslugi/komary/' | relative_url }}" class="header__mobile-link">Комары</a>
+          <a href="{{ '/uslugi/osy/' | relative_url }}" class="header__mobile-link">Осы</a>
           <span class="header__mobile-divider"></span>
           <a href="{{ '/blog/' | relative_url }}" class="header__mobile-link">Блог</a>
           <a href="{{ '/faq/' | relative_url }}" class="header__mobile-link">FAQ</a>

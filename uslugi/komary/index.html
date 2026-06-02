@@ -1,0 +1,79 @@
+---
+layout: default
+title: Уничтожение комаров в Пензе
+description: Уничтожение комаров холодным туманом в Пензе. Препараты 4-го класса. Обработка помещений и открытых территорий. Защита на весь сезон.
+style: |
+  .page-hero{border-bottom:1px solid var(--color-border);padding-top:var(--space-5);padding-bottom:var(--space-5)}
+  .page-hero h1{color:var(--color-accent);margin-bottom:var(--space-3)}
+  .page-section{padding-block:var(--space-5)}
+  .page-section h2{color:var(--color-accent);margin-bottom:var(--space-4)}
+  .page-section p{color:var(--color-text-muted);margin-bottom:var(--space-3);line-height:1.7}
+  .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-4)}
+  .method-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-5);text-align:center}
+  .method-card svg{width:36px;height:36px;color:var(--color-accent);margin:0 auto var(--space-3)}
+  @media(max-width:768px){.method-grid{grid-template-columns:1fr}}
+---
+
+{% include breadcrumbs.html %}
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Уничтожение комаров в Пензе</h1>
+    <p class="section__subtitle" style="margin-inline:0">Холодный туман создаёт защитный барьер против комаров — обработка помещений и открытых территорий.</p>
+  </div>
+</section>
+
+<section class="section section--sm" style="padding-top:0">
+  <div class="container container--narrow">
+    <h2 style="margin-top:var(--space-6)">Стоимость обработки</h2>
+    <div class="table-wrap" style="margin-top:var(--space-4)">
+      <table class="table">
+        <thead><tr><th>Тип объекта</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>1-комнатная квартира</td><td class="price">1 500 ₽</td></tr>
+          <tr><td>2-комнатная квартира</td><td class="price">2 000 ₽</td></tr>
+          <tr><td>3-комнатная квартира</td><td class="price">2 500 ₽</td></tr>
+          <tr><td>Участок до 6 соток</td><td class="price">3 500 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta" style="margin-top:var(--space-6)">
+      <span class="section__label">Готовы начать?</span>
+      <h3 class="cta__title">Избавьтесь от комаров сегодня</h3>
+      <p class="cta__text">Позвоните — приедем в день обращения.</p>
+      <div class="cta__actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container container--narrow">
+    <h2>Почему комары опасны</h2>
+    <p>Комары — переносчики опасных заболеваний: малярии, лихорадки Западного Нила, дирофиляриоза. Их укусы вызывают зуд, аллергические реакции, отёки. В Пензенской области комары активны с мая по сентябрь.</p>
+    <p>Комары размножаются в стоячей воде — лужи, бочки, пруды, подвалы. Одна самка откладывает до 300 яиц за раз. Популяция восстанавливается очень быстро.</p>
+
+    <h2 style="margin-top:var(--space-6)">Как мы уничтожаем комаров</h2>
+    <p>Обрабатываем холодным туманом помещения, беседки, веранды и прилегающую территорию. Препарат оседает на траве, кустах, стенах построек — комары гибнут при контакте с обработанной поверхностью. Защита сохраняется до 4 недель.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        {% include icons/shield.svg %}
+        <h4>Барьерная защита</h4>
+        <p style="font-size:var(--text-sm)">Создаём защитный периметр — комары не залетают на участок</p>
+      </div>
+      <div class="method-card">
+        {% include icons/home.svg %}
+        <h4>Дом + участок</h4>
+        <p style="font-size:var(--text-sm)">Комплексная обработка помещения и прилегающей территории</p>
+      </div>
+      <div class="method-card">
+        {% include icons/clock.svg %}
+        <h4>Долгая защита</h4>
+        <p style="font-size:var(--text-sm)">Защита сохраняется до 4 недель после обработки</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -40,3 +40,15 @@
   price_2k: 4200
   price_3k: 5200
   price_house: 6500
+- slug: komary
+  name: Уничтожение комаров
+  price_1k: 1500
+  price_2k: 2000
+  price_3k: 2500
+  price_house: 3500
+- slug: osy
+  name: Уничтожение ос
+  price_1k: 2000
+  price_2k: 3000
+  price_3k: 4000
+  price_house: 5000

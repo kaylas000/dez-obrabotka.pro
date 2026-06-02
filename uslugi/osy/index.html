@@ -1,0 +1,79 @@
+---
+layout: default
+title: Уничтожение ос в Пензе
+description: Уничтожение ос и шершней холодным туманом в Пензе. Препараты 4-го класса. Уничтожаем гнёзда. Работаем на высоте.
+style: |
+  .page-hero{border-bottom:1px solid var(--color-border);padding-top:var(--space-5);padding-bottom:var(--space-5)}
+  .page-hero h1{color:var(--color-accent);margin-bottom:var(--space-3)}
+  .page-section{padding-block:var(--space-5)}
+  .page-section h2{color:var(--color-accent);margin-bottom:var(--space-4)}
+  .page-section p{color:var(--color-text-muted);margin-bottom:var(--space-3);line-height:1.7}
+  .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-4)}
+  .method-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-5);text-align:center}
+  .method-card svg{width:36px;height:36px;color:var(--color-accent);margin:0 auto var(--space-3)}
+  @media(max-width:768px){.method-grid{grid-template-columns:1fr}}
+---
+
+{% include breadcrumbs.html %}
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Уничтожение ос в Пензе</h1>
+    <p class="section__subtitle" style="margin-inline:0">Уничтожаем ос и шершней холодным туманом. Убираем гнёзда. Работаем на высоте.</p>
+  </div>
+</section>
+
+<section class="section section--sm" style="padding-top:0">
+  <div class="container container--narrow">
+    <h2 style="margin-top:var(--space-6)">Стоимость обработки</h2>
+    <div class="table-wrap" style="margin-top:var(--space-4)">
+      <table class="table">
+        <thead><tr><th>Тип объекта</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>Уничтожение 1 гнезда</td><td class="price">2 000 ₽</td></tr>
+          <tr><td>Уничтожение 2-3 гнёзд</td><td class="price">3 500 ₽</td></tr>
+          <tr><td>Обработка чердака</td><td class="price">4 000 ₽</td></tr>
+          <tr><td>Обработка участка</td><td class="price">5 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta" style="margin-top:var(--space-6)">
+      <span class="section__label">Готовы начать?</span>
+      <h3 class="cta__title">Избавьтесь от ос сегодня</h3>
+      <p class="cta__text">Позвоните — приедем в день обращения.</p>
+      <div class="cta__actions">
+        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container container--narrow">
+    <h2>Почему осы опасны</h2>
+    <p>Укусы ос вызывают сильную боль, отёк и аллергические реакции. Для людей с аллергией укус может быть смертелен — анафилактический шок развивается за минуты. Осы агрессивны при защите гнезда и атакуют роем.</p>
+    <p>Осы строят гнёзда под крышами, на чердаках, балконах, в щелях стен. Гнездо растёт с весны до осени — к концу лета в нём сотни особей. Уничтожать гнездо самостоятельно опасно.</p>
+
+    <h2 style="margin-top:var(--space-6)">Как мы уничтожаем ос</h2>
+    <p>Обрабатываем гнездо холодным туманом — препарат проникает внутрь через входное отверстие. Все осы в гнезде погибают в течение часа. После этого снимаем гнездо. При необходимости обрабатываем чердак или помещение для профилактики.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        {% include icons/target.svg %}
+        <h4>Точно в гнездо</h4>
+        <p style="font-size:var(--text-sm)">Препарат подаётся прямо в гнездо — осы не разлетаются</p>
+      </div>
+      <div class="method-card">
+        {% include icons/shield.svg %}
+        <h4>Безопасно</h4>
+        <p style="font-size:var(--text-sm)">Специалист в защитном костюме — вам не нужно рисковать</p>
+      </div>
+      <div class="method-card">
+        {% include icons/clock.svg %}
+        <h4>Быстро</h4>
+        <p style="font-size:var(--text-sm)">Обработка занимает 15-30 минут. Результат сразу.</p>
+      </div>
+    </div>
+  </div>
+</section>

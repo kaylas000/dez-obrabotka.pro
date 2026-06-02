@@ -1,4 +1,4 @@
-<header class="header" role="banner">
+<header class="header" role="banner" id="site-header">
   <div class="container">
     <div class="header__inner">
 
@@ -29,7 +29,7 @@
       </nav>
 
       <div class="header__actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--sm">
+        <a href="tel:+78412250177" class="header__cta-btn">
           {% include icons/phone.svg %}
           +7 (8412) 25-01-77
         </a>
@@ -58,7 +58,7 @@
           <a href="{{ '/contacts/' | relative_url }}" class="header__mobile-link">Контакты</a>
           <a href="{{ '/privacy/' | relative_url }}" class="header__mobile-link">Политика конфиденциальности</a>
         </nav>
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg" style="margin-top: var(--space-5); width: 100%;">
+        <a href="tel:+78412250177" class="header__cta-btn header__cta-btn--mobile" style="margin-top: var(--space-5); width: 100%; justify-content: center;">
           {% include icons/phone.svg %}
           +7 (8412) 25-01-77
         </a>
@@ -70,14 +70,24 @@
 
 <style>
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-height);
-  background: rgba(11,17,32,0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background var(--transition-slow), border-color var(--transition-slow), backdrop-filter var(--transition-slow);
+}
+
+.header--scrolled {
+  background: rgba(11,17,32,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border);
 }
 
 .header__inner {
@@ -106,7 +116,7 @@
   letter-spacing: -0.02em;
 }
 
-.header__nav { display: flex; align-items: center; justify-content: center; gap: var(--space-1); flex: 1; }
+.header__nav { display: flex; align-items: center; justify-content: center; gap: 2px; flex: 1; }
 
 .header__link {
   font-family: var(--font-display);
@@ -114,17 +124,17 @@
   color: var(--color-text-muted);
   text-decoration: none;
   padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-sm);
+  border-radius: 50px;
   transition: color var(--transition), background var(--transition);
   background: none;
   border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 4px;
 }
 
-.header__link:hover { color: var(--color-text); background: var(--color-surface); }
+.header__link:hover { color: var(--color-text); background: rgba(255,255,255,0.05); }
 .header__link svg { width: 14px; height: 14px; transition: transform var(--transition); }
 .header__dropdown-toggle:hover svg { transform: rotate(90deg); }
 
@@ -132,9 +142,9 @@
 
 .header__dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: var(--space-2);
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -142,12 +152,11 @@
   min-width: 210px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
   transition: all var(--transition);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.header__dropdown:hover .header__dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.header__dropdown:hover .header__dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 
 .header__dropdown-link {
   display: block;
@@ -162,7 +171,31 @@
 .header__dropdown-link:hover { color: var(--color-text); background: var(--color-surface-hover); }
 
 .header__actions { display: flex; align-items: center; gap: var(--space-4); flex-shrink: 0; }
-.header__actions .btn { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+/* Pill CTA button — Kimi style */
+.header__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: var(--color-accent-alt);
+  color: var(--color-base);
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.header__cta-btn:hover {
+  background: color-mix(in srgb, var(--color-accent-alt) 90%, white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+}
+
+.header__cta-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 .header__toggle-input {
   position: absolute;
@@ -192,18 +225,9 @@
   transform-origin: center;
 }
 
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#menu-toggle:checked ~ .header__toggle-label .header__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .header__mobile-nav {
   display: none;
@@ -220,10 +244,7 @@
   overscroll-behavior: contain;
 }
 
-#menu-toggle:checked ~ .header__mobile-nav {
-  display: flex;
-  flex-direction: column;
-}
+#menu-toggle:checked ~ .header__mobile-nav { display: flex; flex-direction: column; }
 
 .header__mobile-heading {
   display: block;
@@ -250,7 +271,6 @@
 }
 
 .header__mobile-link:hover { color: var(--color-accent); }
-
 .header__mobile-divider { display: block; height: 1px; background: var(--color-border); margin: var(--space-4) 0; }
 
 @media (max-width: 768px) {
@@ -262,8 +282,22 @@
 
 <script>
 (function() {
+  var header = document.getElementById('site-header');
+
+  // Scroll: transparent → opaque (Kimi-style)
+  function onScroll() {
+    if (window.scrollY > 10) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // init
+
+  // Mobile menu: close on link click
   var toggle = document.getElementById('menu-toggle');
-  var links = document.querySelectorAll('.header__mobile-link');
+  var links = document.querySelectorAll('.header__mobile-link, .header__cta-btn--mobile');
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener('click', function() {
       toggle.checked = false;

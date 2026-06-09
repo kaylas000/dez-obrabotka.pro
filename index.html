@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Уничтожение насекомых в Пензе холодным туманом
-description: Профессиональная дезинсекция в Пензе. Холодный туман, препараты 4-го класса безопасности. Тараканы, клопы, муравьи, блохи, клещи, мухи, грызуны.
+title: Уничтожение насекомых {{ site.data.city.name_prepositional }} холодным туманом
+description: Профессиональная дезинсекция {{ site.data.city.name_prepositional }}. Холодный туман, препараты 4-го класса безопасности. Тараканы, клопы, муравьи, блохи, клещи, мухи, грызуны.
 style: |
-  .hero{padding-top:var(--space-7);padding-bottom:var(--space-7)}
-  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-7);align-items:center}
+  .hero{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden}
+  .hero__bg{position:absolute;inset:0;z-index:0}
+  .hero__bg{background:linear-gradient(135deg,rgba(16,185,129,0.05) 0%,rgba(11,17,32,0) 50%,rgba(16,185,129,0.03) 100%)}
+  .hero__bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(16,185,129,0.06) 0%,transparent 60%)}
+  .hero .container{position:relative;z-index:1}
+  .hero__content{max-width:650px}
   .hero-features{display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-6)}
   .hero-feature{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted)}
   .hero-feature svg{flex-shrink:0;width:20px;height:20px;color:var(--color-accent)}
-  .hero-visual{display:flex;align-items:center;justify-content:center}
-  .hero-visual-inner{width:100%;aspect-ratio:1;max-width:420px;background:radial-gradient(circle at center,rgba(16,185,129,0.08) 0%,transparent 70%);border:1px solid var(--color-border);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
-  .hero-visual-inner::after{content:'';position:absolute;inset:16px;border:1px dashed rgba(16,185,129,0.15);border-radius:50%}
-  .hero-icon{width:80px;height:80px;color:var(--color-accent);opacity:0.7}
   .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-4)}
   .tech-panel{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-6)}
   .tech-panel h4{display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3)}
@@ -22,30 +22,26 @@ style: |
   .safety-card svg{width:40px;height:40px;color:var(--color-accent);margin:0 auto var(--space-4)}
   .safety-card h4{font-size:var(--text-base);margin-bottom:var(--space-2)}
   .safety-card p{font-size:var(--text-sm)}
-  @media(max-width:1024px){.hero .container{grid-template-columns:1fr}.hero-visual{display:none}.safety-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:1024px){.safety-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:768px){.services-grid{grid-template-columns:1fr}.safety-grid{grid-template-columns:1fr}}
-  @media(max-width:480px){.hero{min-height:auto}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}}
+  @media(max-width:480px){.hero{min-height:auto;padding-block:var(--space-7)}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}}
 ---
 
 <!-- Hero -->
 <section class="hero">
+  <div class="hero__bg"></div>
   <div class="container">
     <div class="hero__content reveal">
-      <h1 class="hero__title">Уничтожение насекомых<br>холодным туманом в Пензе</h1>
+      <h1 class="hero__title">Уничтожение насекомых<br>холодным туманом {{ site.data.city.name_prepositional }}</h1>
       <p class="hero__subtitle">Безопасно, эффективно, официально. Препараты 4-го класса — можно находиться в помещении во время обработки.</p>
       <div class="hero-features">
-        <div class="hero-feature">{% include icons/check.svg %} Холодный туман — проникает во все щели</div>
-        <div class="hero-feature">{% include icons/check.svg %} Препараты 4-го класса безопасности</div>
-        <div class="hero-feature">{% include icons/check.svg %} Работаем официально, даём гарантию</div>
+        <div class="hero-feature">{% include icons/check.svg %} {{ site.data.city.usp_trust }}</div>
+        <div class="hero-feature">{% include icons/check.svg %} {{ site.data.city.usp_speed }}</div>
+        <div class="hero-feature">{% include icons/check.svg %} {{ site.data.city.usp_price }}</div>
       </div>
       <div class="hero__actions hero-actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+        <a href="tel:{{ site.data.city.phone_raw }}" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
         <a href="#services" class="btn btn--outline btn--lg">Смотреть услуги</a>
-      </div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="hero-visual-inner">
-        {% include icons/shield.svg %}
       </div>
     </div>
   </div>
@@ -178,7 +174,7 @@ style: |
         <p>Безопасно для детей, животных, людей с аллергией и астмой.</p>
       </div>
       <div class="safety-card reveal">
-        {% include icons/tool.svg %}
+        {% include icons/equipment.svg %}
         <h4>Профессиональное оборудование</h4>
         <p>Шведские генераторы холодного тумана. Точная дозировка.</p>
       </div>
@@ -312,7 +308,7 @@ style: |
       <h3 class="cta__title">Избавьтесь от насекомых сегодня</h3>
       <p class="cta__text">Позвоните или оставьте заявку. Консультация бесплатно. Выезд в день обращения.</p>
       <div class="cta__actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+        <a href="tel:{{ site.data.city.phone_raw }}" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
       </div>
     </div>
   </div>

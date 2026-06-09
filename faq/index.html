@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Частые вопросы
-description: Ответы на частые вопросы о дезинсекции. Безопасность препаратов, подготовка помещения, холодный туман. Дез Обработка, Пенза.
+description: Ответы на частые вопросы о дезинсекции. Безопасность препаратов, подготовка помещения, холодный туман. Дез Обработка, {{ site.data.city.name }}.
 ---
 
 {% include breadcrumbs.html %}
@@ -71,7 +71,7 @@ description: Ответы на частые вопросы о дезинсекц
       <h3 class="cta__title">Позвоните — ответим</h3>
       <p class="cta__text">Бесплатная консультация по телефону.</p>
       <div class="cta__actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+        <a href="tel:{{ site.data.city.phone_raw }}" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
       </div>
     </div>
   </div>

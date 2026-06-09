@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Уничтожение ос в Пензе
-description: Уничтожение ос и шершней холодным туманом в Пензе. Препараты 4-го класса. Уничтожаем гнёзда. Работаем на высоте.
+title: Уничтожение ос {{ site.data.city.name_prepositional }}
+description: Уничтожение ос и шершней холодным туманом {{ site.data.city.name_prepositional }}. Препараты 4-го класса. Уничтожаем гнёзда. Работаем на высоте.
 style: |
   .page-hero{border-bottom:1px solid var(--color-border);padding-top:var(--space-5);padding-bottom:var(--space-5)}
   .page-hero h1{color:var(--color-accent);margin-bottom:var(--space-3)}
@@ -18,7 +18,7 @@ style: |
 
 <section class="page-hero">
   <div class="container">
-    <h1>Уничтожение ос в Пензе</h1>
+    <h1>Уничтожение ос {{ site.data.city.name_prepositional }}</h1>
     <p class="section__subtitle" style="margin-inline:0">Уничтожаем ос и шершней холодным туманом. Убираем гнёзда. Работаем на высоте.</p>
   </div>
 </section>
@@ -43,7 +43,7 @@ style: |
       <h3 class="cta__title">Избавьтесь от ос сегодня</h3>
       <p class="cta__text">Позвоните — приедем в день обращения.</p>
       <div class="cta__actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+        <a href="tel:{{ site.data.city.phone_raw }}" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
       </div>
     </div>
   </div>

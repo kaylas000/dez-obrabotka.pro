@@ -1,51 +1,202 @@
 ---
 layout: default
 title: Контакты
-description: Контакты службы дезинсекции Дез Обработка в Пензе. Телефон, адрес, email. Работаем по Пензе и Пензенской области. Ежедневно, 24/7.
+description: Контакты службы дезинсекции Дез Обработка {{ site.data.city.name_prepositional }}. Телефон, адрес, email. {{ site.data.city.prefix }}. Ежедневно, 24/7.
+style: |
+  .contacts-hero{padding-top:var(--space-7);padding-bottom:var(--space-5)}
+  .contacts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin-bottom:var(--space-7)}
+  .contact-card{background:var(--color-surface);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:var(--space-5);transition:all var(--transition);text-decoration:none;display:block}
+  .contact-card:hover{border-color:rgba(16,185,129,0.2);transform:translateY(-1px)}
+  .contact-card__icon-wrap{width:48px;height:48px;border-radius:var(--radius);background:rgba(16,185,129,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-4)}
+  .contact-card__icon-wrap svg{width:24px;height:24px;color:var(--color-accent)}
+  .contact-card__title{font-family:var(--font-display);font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-bottom:var(--space-1)}
+  .contact-card__value{font-size:var(--text-sm);color:var(--color-accent);margin-bottom:var(--space-1)}
+  .contact-card__desc{font-size:var(--text-xs);color:var(--color-text-muted)}
+  .contacts-layout{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);padding-bottom:var(--space-7)}
+  .form-card{background:var(--color-surface);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:var(--space-7)}
+  .form-card h2{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:600;color:var(--color-text);margin-bottom:var(--space-1)}
+  .form-card>p{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-5)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}
+  .form-field{margin-bottom:var(--space-4)}
+  .form-field label{display:block;font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-2)}
+  .form-field input,.form-field select,.form-field textarea{width:100%;padding:var(--space-3) var(--space-4);background:var(--color-base);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);color:var(--color-text);font-family:var(--font-body);font-size:var(--text-sm);transition:border-color var(--transition)}
+  .form-field input::placeholder,.form-field textarea::placeholder{color:rgba(148,163,184,0.3)}
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--color-accent)}
+  .form-field select{appearance:none;cursor:pointer}
+  .form-field textarea{resize:none}
+  .btn--submit{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);padding:14px 32px;background:var(--color-accent);color:var(--color-base);font-family:var(--font-body);font-weight:600;font-size:var(--text-base);border:none;border-radius:50px;cursor:pointer;transition:all var(--transition)}
+  .btn--submit:hover{background:color-mix(in srgb,var(--color-accent) 90%,white);transform:scale(1.02)}
+  .btn--submit svg{width:16px;height:16px}
+  .form-consent{text-align:center;font-size:var(--text-xs);color:rgba(148,163,184,0.3);margin-top:var(--space-3)}
+  .info-card{background:var(--color-surface);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:var(--space-7);margin-bottom:var(--space-5)}
+  .info-card h2{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;color:var(--color-text);margin-bottom:var(--space-5)}
+  .schedule-row{display:flex;align-items:center;justify-content:space-between;padding:var(--space-3) 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .schedule-row:last-child{border-bottom:none}
+  .schedule-row__left{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--color-text-muted)}
+  .schedule-row__left svg{width:16px;height:16px;color:rgba(148,163,184,0.3);flex-shrink:0}
+  .schedule-row__time{font-size:var(--text-sm);font-weight:500;color:var(--color-accent)}
+  .area-badges{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+  .area-badge{padding:var(--space-1) var(--space-3);background:rgba(255,255,255,0.03);border-radius:50px;font-size:var(--text-xs);color:var(--color-text-muted)}
+  .emergency-card{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:var(--radius);padding:var(--space-7)}
+  .emergency-card h2{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;color:var(--color-accent-alt);margin-bottom:var(--space-2)}
+  .emergency-card p{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-5)}
+  .emergency-card .btn--emergency{display:inline-flex;align-items:center;gap:var(--space-2);padding:12px 24px;background:var(--color-accent-alt);color:var(--color-base);font-family:var(--font-body);font-weight:600;font-size:var(--text-sm);border-radius:50px;text-decoration:none;transition:all var(--transition)}
+  .emergency-card .btn--emergency:hover{background:color-mix(in srgb,var(--color-accent-alt) 90%,white)}
+  .emergency-card .btn--emergency svg{width:16px;height:16px}
+  @media(max-width:1024px){.contacts-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:768px){.contacts-grid{grid-template-columns:1fr}.contacts-layout{grid-template-columns:1fr}}
 ---
 
 {% include breadcrumbs.html %}
 
-<section class="section">
-  <div class="container container--narrow">
-    <div class="section__header">
-      <span class="section__label">Контакты</span>
-      <h1 style="font-size:var(--text-4xl)">Свяжитесь с нами</h1>
-      <p class="section__subtitle">Работаем по Пензе и области. Ежедневно, 24/7.</p>
+<!-- Header -->
+<section class="contacts-hero">
+  <div class="container">
+    <span class="section__label">Контакты</span>
+    <h1 class="section__title" style="font-size:var(--text-4xl)">Свяжитесь с нами</h1>
+    <p class="section__subtitle" style="margin-inline:0;max-width:600px">Выберите удобный способ связи или заполните форму — мы перезвоним вам в течение 15 минут в рабочее время.</p>
+  </div>
+</section>
+
+<!-- Contact Methods -->
+<section>
+  <div class="container">
+    <div class="contacts-grid">
+      <a href="tel:{{ site.data.city.phone_raw }}" class="contact-card reveal">
+        <div class="contact-card__icon-wrap">{% include icons/phone.svg %}</div>
+        <h3 class="contact-card__title">Телефон</h3>
+        <p class="contact-card__value">{{ site.data.city.phone }}</p>
+        <p class="contact-card__desc">Ежедневно с 8:00 до 22:00</p>
+      </a>
+
+      <a href="mailto:info@dez-obrabotka.pro" class="contact-card reveal">
+        <div class="contact-card__icon-wrap">{% include icons/mail.svg %}</div>
+        <h3 class="contact-card__title">Email</h3>
+        <p class="contact-card__value">info@dez-obrabotka.pro</p>
+        <p class="contact-card__desc">Ответим в течение часа</p>
+      </a>
+
+      <a href="https://wa.me/{{ site.data.city.phone_raw }}" class="contact-card reveal">
+        <div class="contact-card__icon-wrap">{% include icons/phone.svg %}</div>
+        <h3 class="contact-card__title">WhatsApp</h3>
+        <p class="contact-card__value">{{ site.data.city.phone }}</p>
+        <p class="contact-card__desc">Пишите в любое время</p>
+      </a>
+
+      <div class="contact-card reveal" style="cursor:default">
+        <div class="contact-card__icon-wrap">{% include icons/map-pin.svg %}</div>
+        <h3 class="contact-card__title">Адрес</h3>
+        <p class="contact-card__value">{{ site.data.city.name }}, ул. Дезинфекторов, 15</p>
+        <p class="contact-card__desc">Офис и склад</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="grid grid--2" style="margin-bottom:var(--space-6)">
-      <div class="contact-card">
-        <div class="contact-card__icon">{% include icons/phone.svg %}</div>
-        <div class="contact-card__title">Телефон</div>
-        <a href="tel:+78412250177" class="contact-card__value phone-link">+7 (8412) 25-01-77</a>
+<!-- Form + Info -->
+<section>
+  <div class="container">
+    <div class="contacts-layout">
+      <!-- Form -->
+      <div class="form-card reveal">
+        <h2>Заказать консультацию</h2>
+        <p>Заполните форму и наш специалист свяжется с вами</p>
+
+        <form action="#" method="POST">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Ваше имя</label>
+              <input type="text" required placeholder="Иван">
+            </div>
+            <div class="form-field">
+              <label>Телефон</label>
+              <input type="tel" required placeholder="+7 (999) 000-00-00">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label>Email (необязательно)</label>
+            <input type="email" placeholder="email@example.com">
+          </div>
+
+          <div class="form-field">
+            <label>Тип услуги</label>
+            <select>
+              <option value="">Выберите услугу</option>
+              <option value="tarakany">Уничтожение тараканов</option>
+              <option value="klopy">Уничтожение клопов</option>
+              <option value="muravi">Уничтожение муравьёв</option>
+              <option value="blohi">Уничтожение блох</option>
+              <option value="kleshchi">Уничтожение клещей</option>
+              <option value="muhi">Уничтожение мух</option>
+              <option value="komary">Уничтожение комаров</option>
+              <option value="osy">Уничтожение ос</option>
+              <option value="gryzuny">Дератизация</option>
+              <option value="complex">Комплексная обработка</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>Сообщение</label>
+            <textarea rows="4" placeholder="Опишите проблему..."></textarea>
+          </div>
+
+          <button type="submit" class="btn--submit">
+            {% include icons/check.svg %}
+            Отправить заявку
+          </button>
+
+          <p class="form-consent">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+        </form>
       </div>
 
-      <div class="contact-card">
-        <div class="contact-card__icon">{% include icons/mail.svg %}</div>
-        <div class="contact-card__title">Email</div>
-        <a href="mailto:info@dez-obrabotka.pro" class="contact-card__value" style="color:var(--color-text)">info@dez-obrabotka.pro</a>
-      </div>
+      <!-- Right Column -->
+      <div>
+        <div class="info-card reveal">
+          <h2>Режим работы</h2>
+          <div class="schedule-row">
+            <span class="schedule-row__left">{% include icons/clock.svg %} Понедельник — Пятница</span>
+            <span class="schedule-row__time">8:00 — 22:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-row__left">{% include icons/clock.svg %} Суббота</span>
+            <span class="schedule-row__time">9:00 — 20:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-row__left">{% include icons/clock.svg %} Воскресенье</span>
+            <span class="schedule-row__time">10:00 — 18:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-row__left">{% include icons/clock.svg %} Экстренный вызов</span>
+            <span class="schedule-row__time">Круглосуточно</span>
+          </div>
+        </div>
 
-      <div class="contact-card">
-        <div class="contact-card__icon">{% include icons/map-pin.svg %}</div>
-        <div class="contact-card__title">Адрес</div>
-        <span class="contact-card__value">Пенза, уточняйте адрес при звонке</span>
-      </div>
+        <div class="info-card reveal">
+          <h2>Районы обслуживания</h2>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;margin-bottom:var(--space-4)">Выезжаем во все районы {{ site.data.city.name_genitive }} и Пензенской области. Время прибытия — от 40 минут в пределах города.</p>
+          <div class="area-badges">
+            <span class="area-badge">Ленинский</span>
+            <span class="area-badge">Октябрьский</span>
+            <span class="area-badge">Первомайский</span>
+            <span class="area-badge">Железнодорожный</span>
+            <span class="area-badge">Арбеково</span>
+            <span class="area-badge">Терновка</span>
+            <span class="area-badge">Засечное</span>
+            <span class="area-badge">Спутник</span>
+            <span class="area-badge">ПО</span>
+          </div>
+        </div>
 
-      <div class="contact-card">
-        <div class="contact-card__icon">{% include icons/clock.svg %}</div>
-        <div class="contact-card__title">Режим работы</div>
-        <span class="contact-card__value">Ежедневно, 24/7</span>
-      </div>
-    </div>
-
-    <div class="cta">
-      <span class="section__label">Срочно нужна обработка?</span>
-      <h3 class="cta__title">Выезд в день обращения</h3>
-      <p class="cta__text">Позвоните прямо сейчас — приедем в течение часа.</p>
-      <div class="cta__actions">
-        <a href="tel:+78412250177" class="btn btn--primary btn--lg">{% include icons/phone.svg %} Получить консультацию</a>
+        <div class="emergency-card reveal">
+          <h2>Срочный вызов</h2>
+          <p>Круглосуточная помощь при массовом заражении или экстренных ситуациях. Специалист выедет в течение 2-4 часов.</p>
+          <a href="tel:{{ site.data.city.phone_raw }}" class="btn--emergency">
+            {% include icons/phone.svg %}
+            {{ site.data.city.phone }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

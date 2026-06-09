@@ -32,9 +32,9 @@
       </nav>
 
       <div class="header__actions">
-        <a href="tel:+78412250177" class="header__cta-btn">
+        <a href="tel:{{ site.data.city.phone_raw }}" class="header__cta-btn">
           {% include icons/phone.svg %}
-          +7 (8412) 25-01-77
+          {{ site.data.city.phone }}
         </a>
       </div>
 
@@ -64,9 +64,9 @@
           <a href="{{ '/contacts/' | relative_url }}" class="header__mobile-link">Контакты</a>
           <a href="{{ '/privacy/' | relative_url }}" class="header__mobile-link">Политика конфиденциальности</a>
         </nav>
-        <a href="tel:+78412250177" class="header__cta-btn header__cta-btn--mobile" style="margin-top: var(--space-5); width: 100%; justify-content: center;">
+        <a href="tel:{{ site.data.city.phone_raw }}" class="header__cta-btn header__cta-btn--mobile" style="margin-top: var(--space-5); width: 100%; justify-content: center;">
           {% include icons/phone.svg %}
-          +7 (8412) 25-01-77
+          {{ site.data.city.phone }}
         </a>
       </div>
 

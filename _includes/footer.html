@@ -35,11 +35,11 @@
 
       <div class="footer__col">
         <h4 class="footer__heading">Контакты</h4>
-        <a href="tel:+78412250177" class="footer__phone">+7 (8412) 25-01-77</a>
+        <a href="tel:{{ site.data.city.phone_raw }}" class="footer__phone">{{ site.data.city.phone }}</a>
         <a href="mailto:info@dez-obrabotka.pro">info@dez-obrabotka.pro</a>
         <p class="footer__address">
           {% include icons/map-pin.svg %}
-          Пенза и Пензенская область
+          {{ site.data.city.prefix }}
         </p>
         <p class="footer__hours">Работаем ежедневно, 24/7</p>
       </div>

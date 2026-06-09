@@ -236,27 +236,24 @@
       });
     }
 
-    // Manual city picker in header (click on city name)
+    // Manual city picker — wire up the header button
     document.addEventListener('DOMContentLoaded', function() {
-      var picker = document.createElement('span');
-      picker.className = 'city-picker';
-      picker.textContent = 'Пенза';
-      picker.title = 'Сменить город';
-      picker.style.cssText = 'cursor:pointer;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);margin-left:8px;padding:2px 8px;border:1px solid var(--color-accent);border-radius:50px;white-space:nowrap;transition:all var(--transition)';
-      picker.addEventListener('mouseenter', function() { this.style.background = 'var(--color-accent)'; this.style.color = 'var(--color-base)'; });
-      picker.addEventListener('mouseleave', function() { this.style.background = ''; this.style.color = 'var(--color-accent)'; });
+      var btn = document.getElementById('city-switch-btn');
+      var label = document.getElementById('city-switch-label');
+      if (!btn || !label) return;
 
-      picker.addEventListener('click', function() {
+      btn.addEventListener('click', function() {
         var newCity = currentCity === 'penza' ? 'moskva' : 'penza';
         applyReplacements(currentCity, newCity);
         localStorage.setItem(CITY_KEY, newCity);
-        picker.textContent = newCity === 'penza' ? 'Пенза' : 'Москва';
-        location.reload();
+        label.textContent = newCity === 'penza' ? 'Пенза' : 'Москва';
+        currentCity = newCity;
       });
 
-      // Add picker next to logo
-      var logo = document.querySelector('.header__logo');
-      if (logo) logo.appendChild(picker);
+      // Update label if saved city differs
+      if (saved && saved !== 'penza') {
+        label.textContent = saved === 'penza' ? 'Пенза' : 'Москва';
+      }
     });
   })();
   </script>

@@ -32,6 +32,10 @@
       </nav>
 
       <div class="header__actions">
+        <button class="header__city-btn" id="city-switch-btn" title="Сменить город">
+          {% include icons/map-pin.svg %}
+          <span id="city-switch-label">{{ site.data.city.name }}</span>
+        </button>
         <a href="tel:{{ site.data.city.phone_raw }}" class="header__cta-btn">
           {% include icons/phone.svg %}
           {{ site.data.city.phone }}
@@ -202,6 +206,10 @@
 }
 
 .header__cta-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.header__city-btn{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-display);font-size:var(--text-xs);font-weight:500;padding:6px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:50px;background:transparent;color:var(--color-text-muted);cursor:pointer;transition:all var(--transition);white-space:nowrap}
+.header__city-btn:hover{border-color:rgba(16,185,129,0.3);color:var(--color-accent);background:rgba(16,185,129,0.05)}
+.header__city-btn svg{width:12px;height:12px;flex-shrink:0}
 
 .header__toggle-input {
   position: absolute;

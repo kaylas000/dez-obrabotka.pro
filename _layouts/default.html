@@ -67,6 +67,116 @@
 
   {% include footer.html %}
 
+  <!-- City data for geo-switcher -->
+  <script>
+  window.__CITY_DATA = {
+    penza: {
+      name: "{{ site.data.city.name }}",
+      phone: "{{ site.data.city.phone }}",
+      phone_raw: "{{ site.data.city.phone_raw }}",
+      prepositional: "{{ site.data.city.name_prepositional }}",
+      prefix: "{{ site.data.city.prefix }}",
+      address: "{{ site.data.city.address }}"
+    },
+    moskva: {
+      name: "Москва",
+      phone: "+7 (495) 123-45-67",
+      phone_raw: "74951234567",
+      prepositional: "в Москве",
+      prefix: "Москва и Московская область",
+      address: "Москва, ул. Дезинфекторов, 15"
+    }
+  };
+  window.__CURRENT_CITY = "penza";
+  </script>
+
+  <!-- Geo-detection + city switcher -->
+  <script>
+  (function() {
+    var CITY_KEY = 'dez-city';
+    var saved = localStorage.getItem(CITY_KEY);
+
+    // If user already chose a city, apply it
+    if (saved && saved !== window.__CURRENT_CITY) {
+      applyCity(saved);
+    } else if (!saved) {
+      // Detect city from IP (free API, no key)
+      fetch('https://ipapi.co/json/')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var detectedCity = (data.city || '').toLowerCase();
+          // If user is in Moscow region but site shows Penza
+          if (detectedCity === 'moscow' && window.__CURRENT_CITY === 'penza') {
+            showCityBanner('moskva');
+          }
+        })
+        .catch(function() { /* ignore */ });
+    }
+
+    function showCityBanner(city) {
+      var banner = document.createElement('div');
+      banner.className = 'city-banner';
+      banner.innerHTML = '<div class="city-banner__inner container">' +
+        '<span class="city-banner__text">Вы в Москве? Переключиться на версию для Москвы — другие цены, контакты, условия.</span>' +
+        '<div class="city-banner__actions">' +
+        '<button class="city-banner__btn" data-city="' + city + '">Да, я в Москве</button>' +
+        '<button class="city-banner__close">&times;</button>' +
+        '</div></div>';
+      document.body.insertBefore(banner, document.body.firstChild);
+      document.body.classList.add('has-city-banner');
+
+      banner.querySelector('[data-city]').addEventListener('click', function() {
+        applyCity(city);
+        localStorage.setItem(CITY_KEY, city);
+        banner.remove();
+        document.body.classList.remove('has-city-banner');
+      });
+
+      banner.querySelector('.city-banner__close').addEventListener('click', function() {
+        banner.remove();
+        document.body.classList.remove('has-city-banner');
+      });
+    }
+
+    function applyCity(city) {
+      var data = window.__CITY_DATA[city];
+      if (!data) return;
+      window.__CURRENT_CITY = city;
+
+      // Update all phone numbers
+      document.querySelectorAll('[data-city-phone]').forEach(function(el) {
+        el.textContent = data.phone;
+        if (el.href) el.href = 'tel:' + data.phone_raw;
+      });
+
+      // Update city name references
+      document.querySelectorAll('[data-city-name]').forEach(function(el) {
+        el.textContent = data.name;
+      });
+
+      document.querySelectorAll('[data-city-prep]').forEach(function(el) {
+        el.textContent = data.prepositional;
+      });
+
+      document.querySelectorAll('[data-city-prefix]').forEach(function(el) {
+        el.textContent = data.prefix;
+      });
+    }
+  })();
+  </script>
+
+  <style>
+  .city-banner{background:rgba(245,158,11,0.12);border-bottom:1px solid rgba(245,158,11,0.2);padding:var(--space-3) 0;position:relative;z-index:101}
+  .city-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
+  .city-banner__text{font-size:var(--text-sm);color:var(--color-accent-alt)}
+  .city-banner__actions{display:flex;align-items:center;gap:var(--space-3);flex-shrink:0}
+  .city-banner__btn{font-family:var(--font-display);font-size:var(--text-sm);font-weight:600;padding:6px 14px;background:var(--color-accent-alt);color:var(--color-base);border:none;border-radius:50px;cursor:pointer;white-space:nowrap;transition:background var(--transition)}
+  .city-banner__btn:hover{background:color-mix(in srgb,var(--color-accent-alt) 85%,white)}
+  .city-banner__close{background:none;border:none;color:var(--color-text-muted);font-size:20px;cursor:pointer;padding:0;line-height:1}
+  .has-city-banner .header{top:44px}
+  @media(max-width:768px){.city-banner__inner{flex-direction:column;text-align:center}}
+  </style>
+
   <!-- Scroll reveal -->
   <script>
   (function() {

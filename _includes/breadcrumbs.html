@@ -9,10 +9,14 @@
       <a href="{{ '/#services' | relative_url }}" class="breadcrumbs__link">Услуги</a>
     </li>
     {% endif %}
-    {% if page.url contains '/blog/' %}
+    {% if page.url contains '/blog/' or page.layout == 'post' %}
     <li class="breadcrumbs__item">
       <span class="breadcrumbs__sep">/</span>
+      {% if page.layout == 'post' %}
+      <a href="{{ '/blog/' | relative_url }}" class="breadcrumbs__link">Блог</a>
+      {% else %}
       <span class="breadcrumbs__current">Блог</span>
+      {% endif %}
     </li>
     {% endif %}
     {% if page.url contains '/faq/' %}
@@ -28,6 +32,12 @@
     </li>
     {% endif %}
     {% if page.title and page.url contains '/uslugi/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">{{ page.title }}</span>
+    </li>
+    {% endif %}
+    {% if page.layout == 'post' %}
     <li class="breadcrumbs__item">
       <span class="breadcrumbs__sep">/</span>
       <span class="breadcrumbs__current">{{ page.title }}</span>

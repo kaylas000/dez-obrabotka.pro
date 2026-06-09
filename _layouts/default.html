@@ -159,17 +159,55 @@
 
     // Detect city from IP
     if (!saved) {
+      // Try multiple free geo APIs for reliability
+      function detectMoscow(data) {
+        var city = (data.city || '').toLowerCase();
+        var region = (data.region || '').toLowerCase();
+        var regionCode = (data.region_code || '').toUpperCase();
+        var country = (data.country_code || '').toUpperCase();
+
+        // Only detect for Russian visitors
+        if (country !== 'RU') return false;
+
+        // Check multiple Moscow indicators
+        var isMoscow = (
+          city === 'moscow' ||
+          city === 'moskva' ||
+          region === 'moscow' ||
+          region === 'moskva' ||
+          region.indexOf('моск') !== -1 ||
+          region.indexOf('moscow') !== -1 ||
+          regionCode === 'MOW' ||
+          regionCode === 'MOS'
+        );
+        return isMoscow;
+      }
+
       fetch('https://ipapi.co/json/')
-        .then(function(r) { return r.json(); })
+        .then(function(r) {
+          if (!r.ok) throw new Error('API fail');
+          return r.json();
+        })
         .then(function(data) {
-          var region = (data.region || '').toLowerCase();
-          var cityName = (data.city || '').toLowerCase();
-          // Moscow city or Moscow region
-          if ((cityName === 'moscow' || region === 'moscow' || region === 'moskovskaya oblast') && currentCity === 'penza') {
+          if (detectMoscow(data) && currentCity === 'penza') {
             showCityBanner('moskva');
           }
         })
-        .catch(function() {});
+        .catch(function() {
+          // Fallback: try alternative API
+          fetch('https://api.ipify.org?format=json')
+            .then(function(r) { return r.json(); })
+            .then(function(ipData) {
+              return fetch('https://ipapi.co/' + ipData.ip + '/json/');
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+              if (detectMoscow(data) && currentCity === 'penza') {
+                showCityBanner('moskva');
+              }
+            })
+            .catch(function() {});
+        });
     }
 
     function showCityBanner(toCity) {

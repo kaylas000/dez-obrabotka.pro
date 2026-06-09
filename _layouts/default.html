@@ -67,67 +67,127 @@
 
   {% include footer.html %}
 
-  <!-- City data for geo-switcher -->
-  <script>
-  window.__CITY_DATA = {
-    penza: {
-      name: "{{ site.data.city.name }}",
-      phone: "{{ site.data.city.phone }}",
-      phone_raw: "{{ site.data.city.phone_raw }}",
-      prepositional: "{{ site.data.city.name_prepositional }}",
-      prefix: "{{ site.data.city.prefix }}",
-      address: "{{ site.data.city.address }}"
-    },
-    moskva: {
-      name: "Москва",
-      phone: "+7 (495) 123-45-67",
-      phone_raw: "74951234567",
-      prepositional: "в Москве",
-      prefix: "Москва и Московская область",
-      address: "Москва, ул. Дезинфекторов, 15"
-    }
-  };
-  window.__CURRENT_CITY = "penza";
-  </script>
-
-  <!-- Geo-detection + city switcher -->
+  <!-- City geo-switcher: full text replacement -->
   <script>
   (function() {
-    var CITY_KEY = 'dez-city';
+    var CITY_KEY = 'dez-city-v2';
+    var REPLACEMENTS = {
+      penza: {
+        'Пенза': 'Пенза',
+        'Пензы': 'Пензы',
+        'в Пензе': 'в Пензе',
+        'Пенза и Пензенская область': 'Пенза и Пензенская область',
+        'Пензенская область': 'Пензенская область',
+        '+7 (8412) 25-01-77': '+7 (8412) 25-01-77',
+        '78412250177': '78412250177',
+        'Ленинский': 'Ленинский',
+        'Октябрьский': 'Октябрьский',
+        'Первомайский': 'Первомайский',
+        'Железнодорожный': 'Железнодорожный',
+        'Арбеково': 'Арбеково',
+        'Терновка': 'Терновка',
+        'Засечное': 'Засечное',
+        'Спутник': 'Спутник'
+      },
+      moskva: {
+        'Пенза': 'Москва',
+        'Пензы': 'Москвы',
+        'в Пензе': 'в Москве',
+        'Пенза и Пензенская область': 'Москва и Московская область',
+        'Пензенская область': 'Московская область',
+        '+7 (8412) 25-01-77': '+7 (495) 123-45-67',
+        '78412250177': '74951234567',
+        'Ленинский': 'ЦАО',
+        'Октябрьский': 'САО',
+        'Первомайский': 'ЮВАО',
+        'Железнодорожный': 'ЮЗАО',
+        'Арбеково': 'ЗАО',
+        'Терновка': 'ТиНАО',
+        'Засечное': 'МО',
+        'Спутник': 'СЗАО'
+      }
+    };
+
+    var currentCity = 'penza';
     var saved = localStorage.getItem(CITY_KEY);
 
-    // If user already chose a city, apply it
-    if (saved && saved !== window.__CURRENT_CITY) {
-      applyCity(saved);
-    } else if (!saved) {
-      // Detect city from IP (free API, no key)
+    function applyReplacements(fromCity, toCity) {
+      var map = REPLACEMENTS[toCity];
+      if (!map) return;
+
+      // Walk all text nodes
+      var walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      );
+
+      var textNodes = [];
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+
+      textNodes.forEach(function(node) {
+        var text = node.textContent;
+        var changed = false;
+        Object.keys(map).forEach(function(from) {
+          if (text.indexOf(from) !== -1) {
+            text = text.split(from).join(map[from]);
+            changed = true;
+          }
+        });
+        if (changed) {
+          node.textContent = text;
+        }
+      });
+
+      // Update tel: links
+      var phoneFrom = REPLACEMENTS[fromCity]['78412250177'] || '78412250177';
+      var phoneTo = REPLACEMENTS[toCity]['78412250177'] || '78412250177';
+      document.querySelectorAll('a[href*="' + phoneFrom + '"]').forEach(function(a) {
+        a.href = a.href.replace(phoneFrom, phoneTo);
+      });
+
+      currentCity = toCity;
+    }
+
+    // Apply saved city preference
+    if (saved && saved !== currentCity) {
+      applyReplacements('penza', saved);
+    }
+
+    // Detect city from IP
+    if (!saved) {
       fetch('https://ipapi.co/json/')
         .then(function(r) { return r.json(); })
         .then(function(data) {
-          var detectedCity = (data.city || '').toLowerCase();
-          // If user is in Moscow region but site shows Penza
-          if (detectedCity === 'moscow' && window.__CURRENT_CITY === 'penza') {
+          var region = (data.region || '').toLowerCase();
+          var cityName = (data.city || '').toLowerCase();
+          // Moscow city or Moscow region
+          if ((cityName === 'moscow' || region === 'moscow' || region === 'moskovskaya oblast') && currentCity === 'penza') {
             showCityBanner('moskva');
           }
         })
-        .catch(function() { /* ignore */ });
+        .catch(function() {});
     }
 
-    function showCityBanner(city) {
+    function showCityBanner(toCity) {
+      var labels = { moskva: 'Москве', penza: 'Пензе' };
       var banner = document.createElement('div');
       banner.className = 'city-banner';
       banner.innerHTML = '<div class="city-banner__inner container">' +
-        '<span class="city-banner__text">Вы в Москве? Переключиться на версию для Москвы — другие цены, контакты, условия.</span>' +
+        '<span class="city-banner__text">Вы в ' + labels[toCity] + '? Показать версию сайта для ' + labels[toCity] + ' — другие цены, контакты, условия.</span>' +
         '<div class="city-banner__actions">' +
-        '<button class="city-banner__btn" data-city="' + city + '">Да, я в Москве</button>' +
+        '<button class="city-banner__btn" data-city="' + toCity + '">Да, переключить</button>' +
         '<button class="city-banner__close">&times;</button>' +
         '</div></div>';
       document.body.insertBefore(banner, document.body.firstChild);
       document.body.classList.add('has-city-banner');
 
       banner.querySelector('[data-city]').addEventListener('click', function() {
-        applyCity(city);
-        localStorage.setItem(CITY_KEY, city);
+        applyReplacements(currentCity, toCity);
+        localStorage.setItem(CITY_KEY, toCity);
         banner.remove();
         document.body.classList.remove('has-city-banner');
       });
@@ -138,30 +198,28 @@
       });
     }
 
-    function applyCity(city) {
-      var data = window.__CITY_DATA[city];
-      if (!data) return;
-      window.__CURRENT_CITY = city;
+    // Manual city picker in header (click on city name)
+    document.addEventListener('DOMContentLoaded', function() {
+      var picker = document.createElement('span');
+      picker.className = 'city-picker';
+      picker.textContent = 'Пенза';
+      picker.title = 'Сменить город';
+      picker.style.cssText = 'cursor:pointer;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);margin-left:8px;padding:2px 8px;border:1px solid var(--color-accent);border-radius:50px;white-space:nowrap;transition:all var(--transition)';
+      picker.addEventListener('mouseenter', function() { this.style.background = 'var(--color-accent)'; this.style.color = 'var(--color-base)'; });
+      picker.addEventListener('mouseleave', function() { this.style.background = ''; this.style.color = 'var(--color-accent)'; });
 
-      // Update all phone numbers
-      document.querySelectorAll('[data-city-phone]').forEach(function(el) {
-        el.textContent = data.phone;
-        if (el.href) el.href = 'tel:' + data.phone_raw;
+      picker.addEventListener('click', function() {
+        var newCity = currentCity === 'penza' ? 'moskva' : 'penza';
+        applyReplacements(currentCity, newCity);
+        localStorage.setItem(CITY_KEY, newCity);
+        picker.textContent = newCity === 'penza' ? 'Пенза' : 'Москва';
+        location.reload();
       });
 
-      // Update city name references
-      document.querySelectorAll('[data-city-name]').forEach(function(el) {
-        el.textContent = data.name;
-      });
-
-      document.querySelectorAll('[data-city-prep]').forEach(function(el) {
-        el.textContent = data.prepositional;
-      });
-
-      document.querySelectorAll('[data-city-prefix]').forEach(function(el) {
-        el.textContent = data.prefix;
-      });
-    }
+      // Add picker next to logo
+      var logo = document.querySelector('.header__logo');
+      if (logo) logo.appendChild(picker);
+    });
   })();
   </script>
 
@@ -170,8 +228,8 @@
   .city-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
   .city-banner__text{font-size:var(--text-sm);color:var(--color-accent-alt)}
   .city-banner__actions{display:flex;align-items:center;gap:var(--space-3);flex-shrink:0}
-  .city-banner__btn{font-family:var(--font-display);font-size:var(--text-sm);font-weight:600;padding:6px 14px;background:var(--color-accent-alt);color:var(--color-base);border:none;border-radius:50px;cursor:pointer;white-space:nowrap;transition:background var(--transition)}
-  .city-banner__btn:hover{background:color-mix(in srgb,var(--color-accent-alt) 85%,white)}
+  .city-banner__btn{font-family:var(--font-display);font-size:var(--text-sm);font-weight:600;padding:6px 14px;background:var(--color-accent-alt);color:var(--color-base);border:none;border-radius:50px;cursor:pointer;white-space:nowrap;transition:all var(--transition)}
+  .city-banner__btn:hover{background:color-mix(in srgb,var(--color-accent-alt) 85%,white);transform:translateY(-1px)}
   .city-banner__close{background:none;border:none;color:var(--color-text-muted);font-size:20px;cursor:pointer;padding:0;line-height:1}
   .has-city-banner .header{top:44px}
   @media(max-width:768px){.city-banner__inner{flex-direction:column;text-align:center}}

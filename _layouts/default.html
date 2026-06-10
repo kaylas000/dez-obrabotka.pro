@@ -56,7 +56,7 @@
     "name": "{{ site.title }}",
     "description": "{{ site.description }}",
     "url": "{{ site.url }}",
-    "telephone": "++7 (8412) 25-01-77_RAW",
+    "telephone": "+78412250177",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Пенза",
@@ -237,10 +237,8 @@
       document.body.classList.add('has-city-banner');
 
       banner.querySelector('[data-city]').addEventListener('click', function() {
-        applyReplacements(currentCity, toCity);
         localStorage.setItem(CITY_KEY, toCity);
-        banner.remove();
-        document.body.classList.remove('has-city-banner');
+        location.reload();
       });
 
       banner.querySelector('.city-banner__close').addEventListener('click', function() {
@@ -257,10 +255,8 @@
 
       btn.addEventListener('click', function() {
         var newCity = currentCity === 'penza' ? 'moskva' : 'penza';
-        applyReplacements(currentCity, newCity);
         localStorage.setItem(CITY_KEY, newCity);
-        label.textContent = newCity === 'penza' ? 'Пенза' : 'Москва';
-        currentCity = newCity;
+        location.reload();
       });
 
       // Update label if saved city differs

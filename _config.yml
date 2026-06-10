@@ -2,3 +2,16 @@ title: Дез Обработка
 description: Профессиональная дезинсекция в Пензе. Холодный туман, безопасные препараты 4-го класса.
 baseurl: ""
 url: "https://dez-obrabotka.pro"
+
+plugins:
+  - jekyll-sitemap
+
+# Чистые URL без .html
+permalink: /blog/:title/
+
+# Обработка .html → чистый URL
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

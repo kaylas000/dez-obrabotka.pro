@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% capture page_title %}{{ page.title | replace: 'CITY_PREP', site.city_name_prep | replace: 'CITY_GEN', site.city_name_gen | replace: 'CITY_NAME', site.city_name | replace: 'CITY_REGION', site.city_region | replace: 'CITY_PREFIX', site.city_prefix | replace: 'CITY_PHONE', site.city_phone | replace: 'CITY_PHONE_RAW', site.city_phone_raw | replace: 'CITY_ADDRESS', site.city_address }}{% endcapture %}
+  {% capture page_desc %}{{ page.description | replace: 'CITY_PREP', site.city_name_prep | replace: 'CITY_GEN', site.city_name_gen | replace: 'CITY_NAME', site.city_name | replace: 'CITY_REGION', site.city_region | replace: 'CITY_PREFIX', site.city_prefix | replace: 'CITY_PHONE', site.city_phone | replace: 'CITY_PHONE_RAW', site.city_phone_raw | replace: 'CITY_ADDRESS', site.city_address }}{% endcapture %}
+
+  <title>{% if page.title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.description }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page_desc }}{% else %}{{ site.description }}{% endif %}">
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
 
   <!-- Preload fonts -->
@@ -28,8 +31,8 @@
   {% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
   <!-- Open Graph -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page_desc }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url | replace:'index.html','' }}">
   <meta property="og:site_name" content="{{ site.title }}">
@@ -40,8 +43,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page_desc }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{{ site.url }}/assets/img/og-image.png">
 
   <!-- Schema.org -->
@@ -53,17 +56,17 @@
     "name": "{{ site.title }}",
     "description": "{{ site.description }}",
     "url": "{{ site.url }}",
-    "telephone": "+{{ site.data.city.phone_raw }}",
+    "telephone": "+{{ site.city_phone }}_RAW",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "{{ site.data.city.name }}",
+      "addressLocality": "{{ site.city_name }}",
       "addressCountry": "RU"
     },
     "openingHours": "Mo-Su 00:00-23:59",
     "priceRange": "от 1600₽",
     "areaServed": {
       "@type": "City",
-      "name": "{{ site.data.city.name }}"
+      "name": "{{ site.city_name }}"
     }
   }
   </script>

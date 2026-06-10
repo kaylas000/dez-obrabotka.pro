@@ -3,15 +3,18 @@ description: Профессиональная дезинсекция в Пенз
 baseurl: ""
 url: "https://dez-obrabotka.pro"
 
+# Город (для frontmatter — дублируется в _data/city.yml для JS)
+city_name: Пенза
+city_name_prep: в Пензе
+city_name_gen: Пензы
+city_region: Пензенская область
+city_prefix: Пенза и Пензенская область
+city_phone: +7 (8412) 25-01-77
+city_phone_raw: 78412250177
+city_address: Пенза, ул. Дезинфекторов, 15
+
 plugins:
   - jekyll-sitemap
 
 # Чистые URL без .html
 permalink: /blog/:title/
-
-# Обработка .html → чистый URL
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default

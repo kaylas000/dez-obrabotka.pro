@@ -35,11 +35,11 @@
 
       <div class="footer__col">
         <h4 class="footer__heading">Контакты</h4>
-        <a href="tel:{{ site.data.city.phone_raw }}" class="footer__phone">{{ site.data.city.phone }}</a>
+        <a href="tel:{{ site.city_phone }}_RAW" class="footer__phone">{{ site.city_phone }}</a>
         <a href="mailto:info@dez-obrabotka.pro">info@dez-obrabotka.pro</a>
         <p class="footer__address">
           {% include icons/map-pin.svg %}
-          {{ site.data.city.prefix }}
+          {{ site.city_prefix }}
         </p>
         <p class="footer__hours">Работаем ежедневно, 24/7</p>
       </div>

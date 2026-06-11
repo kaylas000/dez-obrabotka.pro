@@ -259,9 +259,23 @@
         location.reload();
       });
 
-      // Update label if saved city differs
+      // Update labels if saved city differs
       if (saved && saved !== 'penza') {
-        label.textContent = saved === 'penza' ? 'Пенза' : 'Москва';
+        var cityLabel = saved === 'penza' ? 'Пенза' : 'Москва';
+        label.textContent = cityLabel;
+        var mobileLabel = document.getElementById('city-switch-label-mobile');
+        if (mobileLabel) mobileLabel.textContent = cityLabel;
+      }
+
+      // Wire up mobile city button too
+      var mobileBtn = document.getElementById('city-switch-btn-mobile');
+      var mobileLabel = document.getElementById('city-switch-label-mobile');
+      if (mobileBtn && mobileLabel) {
+        mobileBtn.addEventListener('click', function() {
+          var newCity = currentCity === 'penza' ? 'moskva' : 'penza';
+          localStorage.setItem(CITY_KEY, newCity);
+          location.reload();
+        });
       }
     });
   })();

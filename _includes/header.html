@@ -31,11 +31,12 @@
         <a href="{{ '/contacts/' | relative_url }}" class="header__link">Контакты</a>
       </nav>
 
+      <button class="header__city-btn header__city-picker" id="city-switch-btn" title="Сменить город">
+        {% include icons/map-pin.svg %}
+        <span id="city-switch-label">Пенза</span>
+      </button>
+
       <div class="header__actions">
-        <button class="header__city-btn" id="city-switch-btn" title="Сменить город">
-          {% include icons/map-pin.svg %}
-          <span id="city-switch-label">Пенза</span>
-        </button>
         <a href="tel:+78412250177" class="header__cta-btn">
           {% include icons/phone.svg %}
           +7 (8412) 25-01-77
@@ -68,11 +69,7 @@
           <a href="{{ '/contacts/' | relative_url }}" class="header__mobile-link">Контакты</a>
           <a href="{{ '/privacy/' | relative_url }}" class="header__mobile-link">Политика конфиденциальности</a>
         </nav>
-        <button class="header__city-btn header__city-btn--mobile" id="city-switch-btn-mobile" style="margin-top:var(--space-4);width:100%;justify-content:center">
-          {% include icons/map-pin.svg %}
-          <span id="city-switch-label-mobile">Пенза</span>
-        </button>
-        <a href="tel:+78412250177" class="header__cta-btn header__cta-btn--mobile" style="margin-top: var(--space-3); width: 100%; justify-content: center;">
+        <a href="tel:+78412250177" class="header__cta-btn header__cta-btn--mobile" style="margin-top: var(--space-5); width: 100%; justify-content: center;">
           {% include icons/phone.svg %}
           +7 (8412) 25-01-77
         </a>
@@ -293,8 +290,9 @@
 
 @media (max-width: 768px) {
   .header__nav, .header__actions { display: none; }
-  .header__toggle-label { display: flex; margin-left: auto; }
-  .header__inner { gap: var(--space-4); }
+  .header__city-picker { display: inline-flex; margin-left: auto; margin-right: var(--space-2); }
+  .header__toggle-label { display: flex; }
+  .header__inner { gap: var(--space-3); }
 }
 </style>
 

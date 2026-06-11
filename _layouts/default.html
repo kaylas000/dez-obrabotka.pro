@@ -162,7 +162,37 @@
         a.href = a.href.replace(phoneFrom, phoneTo);
       });
 
+      // Update meta tags in head
+      var title = document.querySelector('title');
+      if (title) title.textContent = replaceText(title.textContent, map);
+      var metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = replaceText(metaDesc.content, map);
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = replaceText(ogTitle.content, map);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.content = replaceText(ogDesc.content, map);
+      // Update Schema.org JSON-LD
+      var schemaScript = document.querySelector('script[type="application/ld+json"]');
+      if (schemaScript) {
+        try {
+          var schema = JSON.parse(schemaScript.textContent);
+          if (schema.address) schema.address.addressLocality = map['Пенза'] || schema.address.addressLocality;
+          if (schema.areaServed) schema.areaServed.name = map['Пенза'] || schema.areaServed.name;
+          schema.telephone = map['+7 (8412) 25-01-77'] || schema.telephone;
+          schemaScript.textContent = JSON.stringify(schema);
+        } catch(e) {}
+      }
+
       currentCity = toCity;
+    }
+
+    function replaceText(text, map) {
+      Object.keys(map).forEach(function(from) {
+        if (text.indexOf(from) !== -1) {
+          text = text.split(from).join(map[from]);
+        }
+      });
+      return text;
     }
 
     // Apply saved city preference

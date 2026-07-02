@@ -396,7 +396,7 @@
 
 @media (max-width: 768px) {
   .hero__video {
-    object-position: 40% center;
+    object-position: 50% center;
   }
 
   .hero__overlay {

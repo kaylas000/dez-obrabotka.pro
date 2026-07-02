@@ -352,6 +352,11 @@
   background: linear-gradient(to top, rgba(11,17,32,0.7) 0%, transparent 50%);
 }
 
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
 .hero__content {
   max-width: 650px;
 }

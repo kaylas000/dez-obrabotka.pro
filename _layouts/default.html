@@ -30,6 +30,12 @@
 
   {% if page.noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
 
+  <!-- GeoMeta -->
+  <meta name="geo.region" content="RU-PN">
+  <meta name="geo.placename" content="Пенза">
+  <meta name="geo.position" content="53.2007;45.0046">
+  <meta name="ICBM" content="53.2007, 45.0046">
+
   <!-- Open Graph -->
   <meta property="og:title" content="{% if page.title %}{{ page_title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page_desc }}{% else %}{{ site.description }}{% endif %}">
@@ -57,17 +63,78 @@
     "description": "{{ site.description }}",
     "url": "{{ site.url }}",
     "telephone": "+79022030015",
+    "email": "texmash2022@mail.ru",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Пензенская область",
       "addressLocality": "Пенза",
+      "addressRegion": "Пензенская область",
       "addressCountry": "RU"
     },
-    "openingHours": "Mo-Su 00:00-23:59",
-    "priceRange": "от 1600₽",
-    "areaServed": {
-      "@type": "City",
-      "name": "Пенза"
-    }
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.2007,
+      "longitude": 45.0046
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "от 1500₽",
+    "currenciesAccepted": "RUB",
+    "paymentAccepted": "Наличные, карта",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Пенза",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Пензенская область"
+        }
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги дезинсекции",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение тараканов"},"price":"2200","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение клопов"},"price":"2700","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение муравьёв"},"price":"1800","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение блох"},"price":"2200","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение клещей"},"price":"2500","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение мух"},"price":"1600","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Дератизация"},"price":"3200","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение комаров"},"price":"1500","priceCurrency":"RUB"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Уничтожение ос"},"price":"2000","priceCurrency":"RUB"}
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150",
+      "bestRating": "5"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "ИП СОРОКИН СЕРГЕЙ АЛЕКСАНДРОВИЧ"
+    },
+    "taxID": "583513047808"
   }
   </script>
 </head>

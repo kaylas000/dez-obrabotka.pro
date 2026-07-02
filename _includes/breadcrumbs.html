@@ -31,6 +31,12 @@
       <span class="breadcrumbs__current">Контакты</span>
     </li>
     {% endif %}
+    {% if page.url contains '/about/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">О компании</span>
+    </li>
+    {% endif %}
     {% if page.title and page.url contains '/uslugi/' %}
     <li class="breadcrumbs__item">
       <span class="breadcrumbs__sep">/</span>
@@ -45,6 +51,33 @@
     {% endif %}
   </ol>
 </nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Главная","item":"{{ site.url }}/"},
+    {% if page.url contains '/uslugi/' %}
+    {"@type":"ListItem","position":2,"name":"Услуги","item":"{{ site.url }}/#services"},
+    {% if page.url contains '/uslugi/' and page.title %}
+    {"@type":"ListItem","position":3,"name":"{{ page.title }}","item":"{{ site.url }}{{ page.url | replace:'index.html','' }}"}
+    {% endif %}
+    {% elsif page.url contains '/about/' %}
+    {"@type":"ListItem","position":2,"name":"О компании","item":"{{ site.url }}/about/"},
+    {% elsif page.url contains '/blog/' or page.layout == 'post' %}
+    {"@type":"ListItem","position":2,"name":"Блог","item":"{{ site.url }}/blog/"},
+    {% if page.layout == 'post' %}
+    {"@type":"ListItem","position":3,"name":"{{ page.title }}","item":"{{ site.url }}{{ page.url | replace:'index.html','' }}"}
+    {% endif %}
+    {% elsif page.url contains '/faq/' %}
+    {"@type":"ListItem","position":2,"name":"FAQ","item":"{{ site.url }}/faq/"},
+    {% elsif page.url contains '/contacts/' %}
+    {"@type":"ListItem","position":2,"name":"Контакты","item":"{{ site.url }}/contacts/"},
+    {% endif %}
+  ]
+}
+</script>
 
 <style>
 .breadcrumbs {

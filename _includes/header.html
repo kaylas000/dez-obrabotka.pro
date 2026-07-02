@@ -289,10 +289,12 @@
 .header__mobile-divider { display: block; height: 1px; background: var(--color-border); margin: var(--space-4) 0; }
 
 @media (max-width: 768px) {
+  .header__inner { gap: var(--space-3); overflow: hidden; }
   .header__nav, .header__actions { display: none; }
-  .header__city-picker { display: inline-flex; margin-left: auto; margin-right: var(--space-2); }
-  .header__toggle-label { display: flex; }
-  .header__inner { gap: var(--space-3); }
+  .header__logo { min-width: 0; }
+  .header__logo-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .header__city-picker { display: inline-flex; flex-shrink: 0; margin-left: auto; margin-right: var(--space-2); max-width: 45%; }
+  .header__toggle-label { display: flex; flex-shrink: 0; }
 }
 </style>
 

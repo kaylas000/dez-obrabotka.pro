@@ -321,12 +321,11 @@
 
 /* ===== Hero ===== */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: flex-start;
-  padding-top: 10vh;
+  align-items: center;
 }
 
 .hero__video {

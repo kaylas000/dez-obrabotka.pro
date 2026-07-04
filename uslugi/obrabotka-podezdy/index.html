@@ -1,0 +1,102 @@
+---
+layout: default
+title: Обработка подъездов, подвалов, чердаков в Пензе
+description: Санитарная обработка общедомовых территорий в Пензе. Подъезды, подвалы, чердаки, мусорокамеры. Дезинфекция и удаление запахов.
+style: |
+  .page-hero{border-bottom:1px solid var(--color-border);padding-top:var(--space-5);padding-bottom:var(--space-5)}
+  .page-hero h1{color:var(--color-accent);margin-bottom:var(--space-3)}
+  .page-section{padding-block:var(--space-5)}
+  .page-section h2{color:var(--color-accent);margin-bottom:var(--space-4)}
+  .page-section p{color:var(--color-text-muted);margin-bottom:var(--space-3);line-height:1.7}
+  .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-4)}
+  .method-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-5);text-align:center}
+  .method-card svg{width:36px;height:36px;color:var(--color-accent);margin:0 auto var(--space-3)}
+  @media(max-width:768px){.method-grid{grid-template-columns:1fr}}
+---
+
+{% include breadcrumbs.html %}
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Обработка подъездов, подвалов, чердаков</h1>
+    <p class="section__subtitle" style="margin-inline:0">Санитарная обработка общедомовых территорий. Дезинфекция, удаление запахов, борьба с насекомыми в подъездах и подвалах.</p>
+  </div>
+</section>
+
+<section class="section section--sm" style="padding-top:0">
+  <div class="container container--narrow">
+    <h2 style="margin-top:var(--space-6)">Стоимость</h2>
+    <div class="table-wrap" style="margin-top:var(--space-4)">
+      <table class="table">
+        <thead><tr><th>Территория</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>Подъезд (1 подъезд)</td><td class="price">от 3 000 ₽</td></tr>
+          <tr><td>Подвал (до 100 м²)</td><td class="price">от 4 000 ₽</td></tr>
+          <tr><td>Чердак (до 100 м²)</td><td class="price">от 3 500 ₽</td></tr>
+          <tr><td>Мусорокамера</td><td class="price">от 2 500 ₽</td></tr>
+          <tr><td>Комплекс (подъезд + подвал)</td><td class="price">от 6 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-3)">* Цена для ТСЖ и управляющих компаний. Оплата — по безналу или наличными.</p>
+
+    <div class="cta" style="margin-top:var(--space-6)">
+      <span class="section__label">Для ТСЖ и УК</span>
+      <h3 class="cta__title">Закажите обработку общедомовых территорий</h3>
+      <p class="cta__text">Работаем с управляющими компаниями и ТСЖ. Договор, акт, оплата по безналу.</p>
+      <div class="cta__actions">
+        <a href="tel:+79022030015" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (902) 203-00-15</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container container--narrow">
+    <h2>Что обрабатываем</h2>
+    <div class="method-grid">
+      <div class="method-card">
+        {% include icons/home.svg %}
+        <h4>Подъезды</h4>
+        <p style="font-size:var(--text-sm)">Дезинфекция лестничных клеток, лифтов, почтовых ящиков, входных групп</p>
+      </div>
+      <div class="method-card">
+        {% include icons/droplet.svg %}
+        <h4>Подвалы</h4>
+        <p style="font-size:var(--text-sm)">Борьба с сыростью, плесенью, тараканами, клопами в подвальных помещениях</p>
+      </div>
+      <div class="method-card">
+        {% include icons/shield.svg %}
+        <h4>Чердаки</h4>
+        <p style="font-size:var(--text-sm)">Дезинфекция, удаление запахов, борьба с грызунами и насекомыми</p>
+      </div>
+    </div>
+
+    <div class="method-grid" style="margin-top:var(--space-4)">
+      <div class="method-card">
+        {% include icons/bug.svg %}
+        <h4>Мусорокамеры</h4>
+        <p style="font-size:var(--text-sm)">Дезинфекция и дезодорация мусорных камер и контейнерных площадок</p>
+      </div>
+      <div class="method-card">
+        {% include icons/bug.svg %}
+        <h4>Тараканы в подъезде</h4>
+        <p style="font-size:var(--text-sm)">Обработка подъезда от тараканов — холодный туман с проникновением в щели</p>
+      </div>
+      <div class="method-card">
+        {% include icons/check.svg %}
+        <h4>Документы</h4>
+        <p style="font-size:var(--text-sm)">Акт выполненных работ, договор, оплата по безналу для юрлиц</p>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:var(--space-6)">
+      <span class="section__label">Свяжитесь с нами</span>
+      <h3 class="cta__title">Рассчитаем стоимость для вашего дома</h3>
+      <p class="cta__text">Бесплатный выезд, осмотр, составление сметы.</p>
+      <div class="cta__actions">
+        <a href="tel:+79022030015" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (902) 203-00-15</a>
+      </div>
+    </div>
+  </div>
+</section>

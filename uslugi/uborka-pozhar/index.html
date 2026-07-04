@@ -1,0 +1,86 @@
+---
+layout: default
+title: Уборка после пожара, смерти, затопления в Пензе
+description: Профессиональная уборка после пожара, смерти, затопления в Пензе. Удаление запахов, осушение, дезинфекция. Выезд в день обращения.
+style: |
+  .page-hero{border-bottom:1px solid var(--color-border);padding-top:var(--space-5);padding-bottom:var(--space-5)}
+  .page-hero h1{color:var(--color-accent);margin-bottom:var(--space-3)}
+  .page-section{padding-block:var(--space-5)}
+  .page-section h2{color:var(--color-accent);margin-bottom:var(--space-4)}
+  .page-section p{color:var(--color-text-muted);margin-bottom:var(--space-3);line-height:1.7}
+  .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-4)}
+  .method-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:var(--space-5);text-align:center}
+  .method-card svg{width:36px;height:36px;color:var(--color-accent);margin:0 auto var(--space-3)}
+  @media(max-width:768px){.method-grid{grid-template-columns:1fr}}
+---
+
+{% include breadcrumbs.html %}
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Уборка после пожара, смерти, затопления</h1>
+    <p class="section__subtitle" style="margin-inline:0">Профессиональная уборка и дезинфекция помещений после ЧП. Удаление запахов, осушение, полная обработка.</p>
+  </div>
+</section>
+
+<section class="section section--sm" style="padding-top:0">
+  <div class="container container--narrow">
+    <h2 style="margin-top:var(--space-6)">Стоимость услуг</h2>
+    <div class="table-wrap" style="margin-top:var(--space-4)">
+      <table class="table">
+        <thead><tr><th>Услуга</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>Уборка после пожара (1-комн. квартира)</td><td class="price">от 8 000 ₽</td></tr>
+          <tr><td>Уборка после пожара (2-комн. квартира)</td><td class="price">от 12 000 ₽</td></tr>
+          <tr><td>Уборка после затопления (1-комн. квартира)</td><td class="price">от 5 000 ₽</td></tr>
+          <tr><td>Осушение помещения (до 50 м²)</td><td class="price">от 4 000 ₽</td></tr>
+          <tr><td>Дезинфекция после ЧП</td><td class="price">от 3 000 ₽</td></tr>
+          <tr><td>Удаление запаха дыма</td><td class="price">от 4 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-3)">* Точная стоимость зависит от площади, степени загрязнения и объёма работ. Бесплатный выезд для оценки.</p>
+
+    <div class="cta" style="margin-top:var(--space-6)">
+      <span class="section__label">Нужна помощь?</span>
+      <h3 class="cta__title">Выезжаем в день обращения</h3>
+      <p class="cta__text">Позвоните — проконсультируем и оценим объём работ бесплатно.</p>
+      <div class="cta__actions">
+        <a href="tel:+79022030015" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (902) 203-00-15</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container container--narrow">
+    <h2>Уборка после пожара</h2>
+    <p>После пожара остаются сажа, копоть, продукты горения и стойкий запах дыма. Самостоятельная уборка неэффективна — сажа проникает в пористые материалы, вентиляцию, мебель.</p>
+    <p>Мы выполняем полную уборку: удаление сажи и копоти со всех поверхностей, промывка стен и потолков, чистка вентиляции, удаление запаха дыма холодным туманом, дезинфекция помещения.</p>
+
+    <h2 style="margin-top:var(--space-6)">Уборка после затопления</h2>
+    <p>Затопление опасно развитием плесени и грибка уже через 24-48 часов. Важно начать осушение как можно раньше.</p>
+    <p>Выполняем: откачку воды, осушение профессиональными осушителями, удаление повреждённых материалов (обои, напольные покрытия), дезинфекцию от плесени, обработку холодным туманом.</p>
+
+    <h2 style="margin-top:var(--space-6)">Уборка после смерти</h2>
+    <p>Деликатная услуга, требующая профессионального подхода. Полная дезинфекция, удаление биологических следов, нейтрализация стойких запахов. Работаем быстро и конфиденциально.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        {% include icons/clock.svg %}
+        <h4>Быстрый выезд</h4>
+        <p style="font-size:var(--text-sm)">Приедем в течение 2-4 часов после звонка</p>
+      </div>
+      <div class="method-card">
+        {% include icons/shield.svg %}
+        <h4>Полная обработка</h4>
+        <p style="font-size:var(--text-sm)">Уборка + дезинфекция + удаление запахов за один визит</p>
+      </div>
+      <div class="method-card">
+        {% include icons/check.svg %}
+        <h4>Гарантия</h4>
+        <p style="font-size:var(--text-sm)">Гарантия на все виды работ. Повторная обработка при необходимости</p>
+      </div>
+    </div>
+  </div>
+</section>

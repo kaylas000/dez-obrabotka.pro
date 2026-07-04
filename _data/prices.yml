@@ -52,3 +52,33 @@
   price_2k: 3000
   price_3k: 4000
   price_house: 5000
+- slug: dezinfektsiya
+  name: Дезинфекция помещений
+  price_1k: 2500
+  price_2k: 3200
+  price_3k: 4000
+  price_house: 5500
+- slug: uborka-pozhar
+  name: Уборка после пожара
+  price_1k: 8000
+  price_2k: 12000
+  price_3k: 15000
+  price_house: 20000
+- slug: udalenie-zapahov
+  name: Удаление запахов
+  price_1k: 2500
+  price_2k: 3200
+  price_3k: 4000
+  price_house: 5000
+- slug: profilaktika
+  name: Профилактическая обработка
+  price_1k: 2000
+  price_2k: 2500
+  price_3k: 3200
+  price_house: 4000
+- slug: obrabotka-podezdy
+  name: Обработка подъездов
+  price_1k: 3000
+  price_2k: 4000
+  price_3k: 5000
+  price_house: 6000

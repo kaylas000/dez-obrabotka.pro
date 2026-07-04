@@ -82,3 +82,9 @@
   price_2k: 4000
   price_3k: 5000
   price_house: 6000
+- slug: garantiynoe-obsluzhivanie
+  name: Гарантийное обслуживание
+  price_1k: 1500
+  price_2k: 2000
+  price_3k: 2500
+  price_house: 3500

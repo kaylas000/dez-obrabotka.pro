@@ -16,5 +16,23 @@ city_address: Пенза, ул. Дезинфекторов, 15
 plugins:
   - jekyll-sitemap
 
+# Exclude internal files from build
+exclude:
+  - CLAUDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - build-penza.sh
+  - build-moskva.sh
+  - design-dna.json
+  - semantic-core.json
+  - docs/
+  - .claude/
+  - node_modules/
+  - screenshot*.png
+
 # Чистые URL без .html
 permalink: /blog/:title/

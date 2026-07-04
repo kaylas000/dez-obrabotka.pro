@@ -37,6 +37,18 @@
       <span class="breadcrumbs__current">О компании</span>
     </li>
     {% endif %}
+    {% if page.url contains '/privacy/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">Политика конфиденциальности</span>
+    </li>
+    {% endif %}
+    {% if page.url contains '/karta-sajta/' %}
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__sep">/</span>
+      <span class="breadcrumbs__current">Карта сайта</span>
+    </li>
+    {% endif %}
     {% if page.title and page.url contains '/uslugi/' %}
     <li class="breadcrumbs__item">
       <span class="breadcrumbs__sep">/</span>
@@ -74,6 +86,10 @@
     {"@type":"ListItem","position":2,"name":"FAQ","item":"{{ site.url }}/faq/"},
     {% elsif page.url contains '/contacts/' %}
     {"@type":"ListItem","position":2,"name":"Контакты","item":"{{ site.url }}/contacts/"},
+    {% elsif page.url contains '/privacy/' %}
+    {"@type":"ListItem","position":2,"name":"Политика конфиденциальности","item":"{{ site.url }}/privacy/"},
+    {% elsif page.url contains '/karta-sajta/' %}
+    {"@type":"ListItem","position":2,"name":"Карта сайта","item":"{{ site.url }}/karta-sajta/"},
     {% endif %}
   ]
 }

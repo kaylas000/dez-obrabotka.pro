@@ -97,58 +97,24 @@ style: |
 <section>
   <div class="container">
     <div class="contacts-layout">
-      <!-- Form -->
+      <!-- Contact CTA -->
       <div class="form-card reveal">
         <h2>Заказать консультацию</h2>
-        <p>Заполните форму и наш специалист свяжется с вами</p>
+        <p>Позвоните или напишите — ответим за 15 минут</p>
 
-        <form action="#" method="POST">
-          <div class="form-row">
-            <div class="form-field">
-              <label>Ваше имя</label>
-              <input type="text" required placeholder="Иван">
-            </div>
-            <div class="form-field">
-              <label>Телефон</label>
-              <input type="tel" required placeholder="+7 (999) 000-00-00">
-            </div>
-          </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <a href="tel:+79022030015" class="btn btn--primary btn--lg" style="width:100%;justify-content:center">
+            {% include icons/phone.svg %} Позвонить: +7 (902) 203-00-15
+          </a>
+          <a href="https://wa.me/79022030015" class="btn btn--outline btn--lg" style="width:100%;justify-content:center">
+            {% include icons/phone.svg %} Написать в WhatsApp
+          </a>
+          <a href="mailto:texmash2022@mail.ru" class="btn btn--outline btn--lg" style="width:100%;justify-content:center">
+            {% include icons/mail.svg %} Отправить письмо
+          </a>
+        </div>
 
-          <div class="form-field">
-            <label>Email (необязательно)</label>
-            <input type="email" placeholder="email@example.com">
-          </div>
-
-          <div class="form-field">
-            <label>Тип услуги</label>
-            <select>
-              <option value="">Выберите услугу</option>
-              <option value="tarakany">Уничтожение тараканов</option>
-              <option value="klopy">Уничтожение клопов</option>
-              <option value="muravi">Уничтожение муравьёв</option>
-              <option value="blohi">Уничтожение блох</option>
-              <option value="kleshchi">Уничтожение клещей</option>
-              <option value="muhi">Уничтожение мух</option>
-              <option value="komary">Уничтожение комаров</option>
-              <option value="osy">Уничтожение ос</option>
-              <option value="gryzuny">Дератизация</option>
-              <option value="complex">Комплексная обработка</option>
-              <option value="other">Другое</option>
-            </select>
-          </div>
-
-          <div class="form-field">
-            <label>Сообщение</label>
-            <textarea rows="4" placeholder="Опишите проблему..."></textarea>
-          </div>
-
-          <button type="submit" class="btn--submit">
-            {% include icons/check.svg %}
-            Отправить заявку
-          </button>
-
-          <p class="form-consent">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
-        </form>
+        <p class="form-consent" style="margin-top:var(--space-4)">Консультация бесплатная. Выезд в день обращения.</p>
       </div>
 
       <!-- Right Column -->

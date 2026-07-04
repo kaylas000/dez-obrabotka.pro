@@ -66,9 +66,9 @@
     "email": "texmash2022@mail.ru",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Пензенская область",
-      "addressLocality": "Пенза",
-      "addressRegion": "Пензенская область",
+      "streetAddress": "{{ site.city_address }}",
+      "addressLocality": "{{ site.city_name }}",
+      "addressRegion": "{{ site.city_region }}",
       "addressCountry": "RU"
     },
     "geo": {
@@ -244,7 +244,9 @@
         try {
           var schema = JSON.parse(schemaScript.textContent);
           if (schema.address) schema.address.addressLocality = map['Пенза'] || schema.address.addressLocality;
-          if (schema.areaServed) schema.areaServed.name = map['Пенза'] || schema.areaServed.name;
+          if (schema.address) schema.address.streetAddress = map['Пензенская область'] || schema.address.streetAddress;
+          if (Array.isArray(schema.areaServed) && schema.areaServed[0]) schema.areaServed[0].name = map['Пенза'] || schema.areaServed[0].name;
+          if (Array.isArray(schema.areaServed) && schema.areaServed[0] && schema.areaServed[0].containedInPlace) schema.areaServed[0].containedInPlace.name = map['Пензенская область'] || schema.areaServed[0].containedInPlace.name;
           schema.telephone = map['+7 (902) 203-00-15'] || schema.telephone;
           schemaScript.textContent = JSON.stringify(schema);
         } catch(e) {}

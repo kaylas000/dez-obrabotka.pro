@@ -1,0 +1,141 @@
+---
+layout: default
+title: Цены на дезинсекцию в Пензе — полный прайс-лист | Дез Обработка
+description: Актуальные цены на уничтожение тараканов, клопов, муравьёв, грызунов в Пензе. Прайс по типам препарата и помещения. Звоните!
+---
+
+{% include breadcrumbs.html %}
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="section__header">
+      <span class="section__label">Прайс-лист</span>
+      <h1 style="font-size:var(--text-4xl)">Цены на услуги</h1>
+      <p class="section__subtitle">Стоимость зависит от типа препарата и площади помещения. Точная цена — после бесплатного осмотра.</p>
+    </div>
+
+    <!-- Основная таблица: дезинсекция -->
+    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Дезинсекция и дератизация</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);font-size:var(--text-sm)">Уничтожение тараканов, клопов, муравьёв, блох, клещей, мух, грызунов, комаров, ос. Цена определяется типом препарата.</p>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Помещение</th>
+            <th>Пиретроиды</th>
+            <th>Микрокапсульные</th>
+            <th>5 поколение</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in site.data.prices %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td class="price">от {{ item.pyrethroids }} ₽</td>
+            <td class="price">от {{ item.microcapsules }} ₽</td>
+            <td class="price">от {{ item.generation5 }} ₽</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:var(--space-4);padding:var(--space-4);border:1px solid var(--color-border);border-radius:4px">
+      <h3 style="font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-2)">Какой препарат выбрать?</h3>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);color:var(--color-text-muted);font-size:var(--text-sm)">
+        <li><strong style="color:var(--color-text)">Пиретроиды</strong> — базовый вариант. Подходит для профилактики и слабого заражения. Действие до 3 недель.</li>
+        <li><strong style="color:var(--color-text)">Микрокапсульные</strong> — средний класс. Микрокапсулы держатся на поверхностях до 3 месяцев. Эффективнее при сильном заражении.</li>
+        <li><strong style="color:var(--color-text)">5 поколение</strong> — премиум. Максимальная эффективность, действие до 6 месяцев. Для тяжёлых случаев и коммерческих объектов.</li>
+      </ul>
+    </div>
+
+    <!-- Уборка после ЧП -->
+    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Уборка после ЧП</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);font-size:var(--text-sm)">Профессиональная уборка после пожара, затопления, смерти. Удаление запахов, осушение, дезинфекция.</p>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Услуга</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>Уборка после пожара (1-комн. квартира)</td><td class="price">от 8 000 ₽</td></tr>
+          <tr><td>Уборка после пожара (2-комн. квартира)</td><td class="price">от 12 000 ₽</td></tr>
+          <tr><td>Уборка после затопления (1-комн. квартира)</td><td class="price">от 5 000 ₽</td></tr>
+          <tr><td>Осушение помещения (до 50 м²)</td><td class="price">от 4 000 ₽</td></tr>
+          <tr><td>Дезинфекция после ЧП</td><td class="price">от 3 000 ₽</td></tr>
+          <tr><td>Удаление запаха дыма</td><td class="price">от 4 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Обработка подъездов -->
+    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Обработка подъездов и подвалов</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);font-size:var(--text-sm)">Санитарная обработка общедомовых территорий. Для ТСЖ и управляющих компаний.</p>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Территория</th><th>Цена</th></tr></thead>
+        <tbody>
+          <tr><td>Подъезд (1 подъезд)</td><td class="price">от 3 000 ₽</td></tr>
+          <tr><td>Подвал (до 100 м²)</td><td class="price">от 4 000 ₽</td></tr>
+          <tr><td>Чердак (до 100 м²)</td><td class="price">от 3 500 ₽</td></tr>
+          <tr><td>Мусорокамера</td><td class="price">от 2 500 ₽</td></tr>
+          <tr><td>Комплекс (подъезд + подвал)</td><td class="price">от 6 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Гарантийное обслуживание -->
+    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Гарантийное обслуживание</h2>
+    <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);font-size:var(--text-sm)">Ежемесячная подписка на регулярную обработку. Контрольные осмотры. Скидка 15% при оплате за 3 месяца.</p>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Тип помещения</th><th>В месяц</th></tr></thead>
+        <tbody>
+          <tr><td>1-комнатная квартира</td><td class="price">1 500 ₽</td></tr>
+          <tr><td>2-комнатная квартира</td><td class="price">2 000 ₽</td></tr>
+          <tr><td>3-комнатная квартира</td><td class="price">2 500 ₽</td></tr>
+          <tr><td>Частный дом</td><td class="price">3 500 ₽</td></tr>
+          <tr><td>Офис до 50 м²</td><td class="price">2 500 ₽</td></tr>
+          <tr><td>Ресторан / кафе</td><td class="price">от 4 000 ₽</td></tr>
+          <tr><td>Склад / магазин</td><td class="price">от 5 000 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta" style="margin-top:var(--space-7)">
+      <span class="section__label">Рассчитать стоимость</span>
+      <h3 class="cta__title">Назовём точную цену за 1 минуту</h3>
+      <p class="cta__text">Позвоните или опишите задачу — рассчитаем стоимость бесплатно. Выезд специалиста для осмотра — бесплатно.</p>
+      <div class="cta__actions">
+        <a href="tel:+79022030015" class="btn btn--primary btn--lg">{% include icons/phone.svg %} +7 (902) 203-00-15</a>
+        <a href="/contacts/" class="btn btn--outline btn--lg">Написать в WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- FAQ по ценам -->
+    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Частые вопросы о ценах</h2>
+
+    <div class="accordion" style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="accordion__item" style="border:1px solid var(--color-border);border-radius:4px;padding:var(--space-4)">
+        <h4 style="font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-2)">Почему цены разные для разных препаратов?</h4>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Пиретроиды — базовый класс, самый доступный. Микрокапсульные — держатся дольше, эффективнее. Препараты 5 поколения — премиум, максимальный срок действия и минимальная токсичность.</p>
+      </div>
+      <div class="accordion__item" style="border:1px solid var(--color-border);border-radius:4px;padding:var(--space-4)">
+        <h4 style="font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-2)">Включены ли повторные обработки?</h4>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Контрольный визит через 21 день входит в стоимость. Если проблема не решена — повторная обработка за наш счёт в течение гарантийного срока.</p>
+      </div>
+      <div class="accordion__item" style="border:1px solid var(--color-border);border-radius:4px;padding:var(--space-4)">
+        <h4 style="font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-2)">Какие скидки действуют?</h4>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Пенсионерам — 10%. При заказе обработки подъездов для ТСЖ — индивидуальные условия. При оплате гарантобслуживания за 3 месяца — скидка 15%.</p>
+      </div>
+      <div class="accordion__item" style="border:1px solid var(--color-border);border-radius:4px;padding:var(--space-4)">
+        <h4 style="font-size:var(--text-base);font-weight:600;margin-bottom:var(--space-2)">Выезд бесплатный?</h4>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm)">Да. Осмотр, консультация и расчёт стоимости — бесплатно. Оплата только после проведённой обработки.</p>
+      </div>
+    </div>
+
+  </div>
+</section>

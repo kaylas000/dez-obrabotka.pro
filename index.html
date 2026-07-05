@@ -220,37 +220,30 @@ style: |
     <div class="section__header reveal">
       <span class="section__label">Цены</span>
       <h2 class="section__title">Прозрачные цены</h2>
-      <p class="section__subtitle">Стоимость зависит от типа помещения. Точная цена — после осмотра.</p>
+      <p class="section__subtitle">Стоимость зависит от типа препарата и помещения. Точная цена — после осмотра.</p>
     </div>
 
-    <div class="table-wrap reveal">
+    {% for group in site.data.prices %}
+    <div class="table-wrap reveal" style="margin-bottom:2rem">
+      <h3 style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;color:var(--color-text)">{{ group.category }}</h3>
       <table class="table">
         <thead>
           <tr>
-            <th>Вредитель</th>
-            <th>1-комн. квартира</th>
-            <th>2-комн. квартира</th>
-            <th>3-комн. квартира</th>
-            <th>Частный дом</th>
+            <th>Помещение</th>
+            <th>Стоимость</th>
           </tr>
         </thead>
         <tbody>
-          {% for item in site.data.prices %}
+          {% for item in group.items %}
           <tr>
-            <td>
-              <a href="{{ '/uslugi/' | append: item.slug | append: '/' | relative_url }}" style="color:var(--color-text);text-decoration:none">
-                {{ item.name }}
-              </a>
-            </td>
-            <td class="price">{{ item.price_1k }} ₽</td>
-            <td class="price">{{ item.price_2k }} ₽</td>
-            <td class="price">{{ item.price_3k }} ₽</td>
-            <td class="price">{{ item.price_house }} ₽</td>
+            <td>{{ item.name }}</td>
+            <td class="price">от {{ item.price }} ₽</td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
+    {% endfor %}
   </div>
 </section>
 

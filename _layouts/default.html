@@ -290,10 +290,23 @@
         // Only detect for Russian visitors
         if (country !== 'RU') return false;
 
+        // Main satellite cities of Moscow Oblast
+        var moscowOblastCities = [
+          'khimki','balashikha','podolsk','lyubertsy','mytishchi',
+          'krasnogorsk','odintsovo','domodedovo','reutov','korolev',
+          'dolgoprudny','shchyolkovo','noginsk','elektrostal',
+          'voskresensk','kolomna','orekhovo-zuyevo','pavlovsky posad',
+          'sergiyev posad','vidnoye','klimovsk','troitsk','kommunarka',
+          'butovo','yubileyny','zelenograd'
+        ];
+
+        var cityMatch = moscowOblastCities.indexOf(city) !== -1;
+
         // Check multiple Moscow indicators
         var isMoscow = (
           city === 'moscow' ||
           city === 'moskva' ||
+          cityMatch ||
           region === 'moscow' ||
           region === 'moskva' ||
           region.indexOf('моск') !== -1 ||

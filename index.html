@@ -205,27 +205,28 @@ style: |
       <p class="section__subtitle">Стоимость зависит от типа препарата и помещения. Точная цена — после осмотра.</p>
     </div>
 
-    {% for group in site.data.prices %}
-    <div class="table-wrap reveal" style="margin-bottom:2rem">
-      <h3 style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;color:var(--color-text)">{{ group.category }}</h3>
+    <div class="table-wrap reveal">
       <table class="table">
         <thead>
           <tr>
             <th>Помещение</th>
-            <th>Стоимость</th>
+            <th>Пиретроиды</th>
+            <th>Микрокапсульные</th>
+            <th>5 поколение</th>
           </tr>
         </thead>
         <tbody>
-          {% for item in group.items %}
+          {% for item in site.data.prices %}
           <tr>
             <td>{{ item.name }}</td>
-            <td class="price">от {{ item.price }} ₽</td>
+            <td class="price">от {{ item.pyrethroids }} ₽</td>
+            <td class="price">от {{ item.microcapsules }} ₽</td>
+            <td class="price">от {{ item.generation5 }} ₽</td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
-    {% endfor %}
   </div>
 </section>
 

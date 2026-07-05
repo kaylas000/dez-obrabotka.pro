@@ -13,10 +13,11 @@ cd _build-moskva
 # Замены в HTML и YAML файлах
 find . -name "*.html" -o -name "*.yml" -o -name "*.md" | while read f; do
   sed -i \
+    -e 's/По Пензе/По Москвы/g' \
+    -e 's/Пензенская/Московская/g' \
     -e 's/в Пензе/в Москве/g' \
     -e 's/Пензы/Москвы/g' \
     -e 's/Пенза/Москва/g' \
-    -e 's/Пензенская область/Московская область/g' \
     -e 's/+7 (8412) 25-01-77/+7 (495) 123-45-67/g' \
     -e 's/78412250177/74951234567/g' \
     -e 's|https://dez-obrabotka.pro|https://moskva.dez-obrabotka.pro|g' \

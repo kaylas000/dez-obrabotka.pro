@@ -69,10 +69,10 @@ style: |
         <p class="contact-card__desc">Ежедневно с 8:00 до 22:00</p>
       </a>
 
-      <a href="mailto:texmash2022@mail.ru" class="contact-card reveal">
+      <a href="mailto:{{ site.city_email }}" class="contact-card reveal">
         <div class="contact-card__icon-wrap">{% include icons/mail.svg %}</div>
         <h3 class="contact-card__title">Email</h3>
-        <p class="contact-card__value">texmash2022@mail.ru</p>
+        <p class="contact-card__value">{{ site.city_email }}</p>
         <p class="contact-card__desc">Ответим в течение часа</p>
       </a>
 
@@ -109,7 +109,7 @@ style: |
           <a href="https://wa.me/79022030015" class="btn btn--outline btn--lg" style="width:100%;justify-content:center">
             {% include icons/phone.svg %} Написать в WhatsApp
           </a>
-          <a href="mailto:texmash2022@mail.ru" class="btn btn--outline btn--lg" style="width:100%;justify-content:center">
+          <a href="mailto:{{ site.city_email }}" class="btn btn--outline btn--lg" style="width:100%;justify-content:center">
             {% include icons/mail.svg %} Отправить письмо
           </a>
         </div>

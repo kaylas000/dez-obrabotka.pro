@@ -29,12 +29,23 @@ style: |
     <h2 style="margin-top:var(--space-6)">Стоимость обработки</h2>
     <div class="table-wrap" style="margin-top:var(--space-4)">
       <table class="table">
-        <thead><tr><th>Тип помещения</th><th>Цена</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Помещение</th>
+            <th>Пиретроиды</th>
+            <th>Микрокапсульные</th>
+            <th>5 поколение</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>1-комнатная квартира</td><td class="price">3 200 ₽</td></tr>
-          <tr><td>2-комнатная квартира</td><td class="price">4 200 ₽</td></tr>
-          <tr><td>3-комнатная квартира</td><td class="price">5 200 ₽</td></tr>
-          <tr><td>Дом до 100 м²</td><td class="price">6 500 ₽</td></tr>
+          {% for item in site.data.prices %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td class="price">от {{ item.pyrethroids }} ₽</td>
+            <td class="price">от {{ item.microcapsules }} ₽</td>
+            <td class="price">от {{ item.generation5 }} ₽</td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

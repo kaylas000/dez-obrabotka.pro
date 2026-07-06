@@ -21,6 +21,7 @@ find . -name "*.html" -o -name "*.yml" -o -name "*.md" | while read f; do
     -e 's/Пенза/Москва/g' \
     -e 's/+7 (8412) 25-01-77/+7 (495) 123-45-67/g' \
     -e 's/78412250177/74951234567/g' \
+    -e 's/disinfection58@rambler.ru/mchodob@yandex.ru/g' \
     -e 's|https://dez-obrabotka.pro|https://moskva.dez-obrabotka.pro|g' \
     -e 's/Ленинский/ЦАО/g' \
     -e 's/Октябрьский/САО/g' \

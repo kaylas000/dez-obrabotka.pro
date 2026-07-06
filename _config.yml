@@ -12,7 +12,6 @@ city_prefix: Пенза и Пензенская область
 city_phone: +7 (902) 203-00-15
 city_phone_raw: 79022030015
 city_address: Пенза, ул. Дезинфекторов, 15
-city_email: disinfection58@rambler.ru
 
 plugins:
   - jekyll-sitemap

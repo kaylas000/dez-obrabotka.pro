@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Цены на дезинсекцию в Пензе — полный прайс-лист | Дез Обработка
-description: Актуальные цены на уничтожение тараканов, клопов, муравьёв, грызунов в Пензе. Прайс по типам препарата и помещения. Звоните!
+description: Актуальные цены на уничтожение тараканов, клопов, муравьёв, грызунов в Пензе. Прайс по типам помещения. Звоните!
 ---
 
 {% include breadcrumbs.html %}
@@ -11,26 +11,34 @@ description: Актуальные цены на уничтожение тара�
     <div class="section__header">
       <span class="section__label">Прайс-лист</span>
       <h1 style="font-size:var(--text-4xl)">Цены на услуги</h1>
-      <p class="section__subtitle">Стоимость зависит от типа препарата, площади помещения и степени заражения. Точная цена — после консультации по телефону.</p>
+      <p class="section__subtitle">Стоимость зависит от площади помещения. Точная цена — после консультации по телефону.</p>
     </div>
-
-    <!-- Основная таблица: дезинсекция -->
-    <h2 style="color:var(--color-accent);font-size:var(--text-2xl);margin:var(--space-7) 0 var(--space-4)">Дезинсекция и дератизация</h2>
-    <p style="color:var(--color-text-muted);margin-bottom:var(--space-4);font-size:var(--text-sm)">Уничтожение тараканов, клопов, муравьёв, блох, клещей, мух, грызунов, комаров, ос. Цена зависит от площади помещения.</p>
 
     <div class="table-wrap">
       <table class="table">
         <thead>
           <tr>
-            <th>Помещение</th>
-            <th>Цена</th>
+            <th>Услуга</th>
+            <th>1 комн.</th>
+            <th>1-комн. кв.</th>
+            <th>2-комн.</th>
+            <th>3-комн.</th>
+            <th>До 100 м²</th>
+            <th>100-200 м²</th>
+            <th>200+ м²</th>
           </tr>
         </thead>
         <tbody>
-          {% for item in site.data.prices %}
+          {% for item in site.data.prices-all %}
           <tr>
-            <td>{{ item.name }}</td>
-            <td class="price">от {{ item.price }} ₽</td>
+            <td><a href="{{ item.link | relative_url }}" style="color:var(--color-text);text-decoration:none">{{ item.service }}</a></td>
+            <td class="price">{{ item.r1 }} ₽</td>
+            <td class="price">{{ item.apt1 }} ₽</td>
+            <td class="price">{{ item.apt2 }} ₽</td>
+            <td class="price">{{ item.apt3 }} ₽</td>
+            <td class="price">{{ item.house100 }} ₽</td>
+            <td class="price">{{ item.house200 }} ₽</td>
+            <td class="price">{{ item.house200plus }} ₽</td>
           </tr>
           {% endfor %}
         </tbody>

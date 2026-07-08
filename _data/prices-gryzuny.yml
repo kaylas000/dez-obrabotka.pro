@@ -1,14 +1,14 @@
 - name: 1 комната
-  price: 1200
+  price: 800
 - name: 1-комнатная квартира
-  price: 1500
+  price: 1000
 - name: 2-комнатная квартира
-  price: 1800
+  price: 1200
 - name: 3-комнатная квартира
-  price: 2200
+  price: 1500
 - name: Дом до 100 м²
-  price: 2500
+  price: 1800
 - name: Дом 100-200 м²
-  price: 3000
+  price: 2200
 - name: Дом более 200 м²
-  price: 3500
+  price: 2700

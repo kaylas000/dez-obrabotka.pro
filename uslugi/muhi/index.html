@@ -36,10 +36,10 @@ style: |
           </tr>
         </thead>
         <tbody>
-          {% for item in site.data.prices %}
+          {% for item in site.data.prices-muhi %}
           <tr>
             <td>{{ item.name }}</td>
-            <td class="price">от {{ item.pyrethroids }} ₽</td>
+            <td class="price">от {{ item.price }} ₽</td>
           </tr>
           {% endfor %}
         </tbody>

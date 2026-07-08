@@ -210,9 +210,7 @@ style: |
         <thead>
           <tr>
             <th>Помещение</th>
-            <th>Пиретроиды</th>
-            <th>Микрокапсульные</th>
-            <th>5 поколение</th>
+            <th>Цена</th>
           </tr>
         </thead>
         <tbody>
@@ -220,8 +218,6 @@ style: |
           <tr>
             <td>{{ item.name }}</td>
             <td class="price">от {{ item.pyrethroids }} ₽</td>
-            <td class="price">от {{ item.microcapsules }} ₽</td>
-            <td class="price">от {{ item.generation5 }} ₽</td>
           </tr>
           {% endfor %}
         </tbody>

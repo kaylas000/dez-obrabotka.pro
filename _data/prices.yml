@@ -1,32 +1,16 @@
 - name: 1 комната
   pyrethroids: 1200
-  microcapsules: 2000
-  generation5: 2500
 - name: 1-комнатная квартира
   pyrethroids: 1500
-  microcapsules: 2300
-  generation5: 3000
 - name: 2-комнатная квартира
   pyrethroids: 1800
-  microcapsules: 2600
-  generation5: 3500
 - name: 3-комнатная квартира
   pyrethroids: 2200
-  microcapsules: 2800
-  generation5: 4000
 - name: Вагон дом, бытовка
   pyrethroids: 1200
-  microcapsules: 2000
-  generation5: 2500
 - name: Дом до 100 м²
   pyrethroids: 2500
-  microcapsules: 3500
-  generation5: 4500
 - name: Дом 100-200 м²
   pyrethroids: 3000
-  microcapsules: 4000
-  generation5: 6000
 - name: Дом более 200 м²
   pyrethroids: 3500
-  microcapsules: 4500
-  generation5: 7500

@@ -43,8 +43,20 @@ style: |
   .emergency-card .btn--emergency{display:inline-flex;align-items:center;gap:var(--space-2);padding:12px 24px;background:var(--color-accent-alt);color:var(--color-base);font-family:var(--font-body);font-weight:600;font-size:var(--text-sm);border-radius:50px;text-decoration:none;transition:all var(--transition)}
   .emergency-card .btn--emergency:hover{background:color-mix(in srgb,var(--color-accent-alt) 90%,white)}
   .emergency-card .btn--emergency svg{width:16px;height:16px}
+  section{overflow-x:hidden}
   @media(max-width:1024px){.contacts-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:768px){.contacts-grid{grid-template-columns:1fr}.contacts-layout{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.contact-card__value{word-break:break-word}}
+  @media(max-width:768px){
+    .contacts-grid{grid-template-columns:1fr}
+    .contacts-layout{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .contact-card__value{word-break:break-word}
+    .schedule-row{flex-wrap:wrap;gap:var(--space-1)}
+    .schedule-row__left{min-width:0;flex:1}
+    .schedule-row__time{white-space:nowrap}
+    .info-card{overflow:hidden}
+    .emergency-card{overflow:hidden}
+    .btn--emergency{word-break:break-word;white-space:normal;text-align:center;justify-content:center}
+  }
 ---
 
 {% include breadcrumbs.html %}

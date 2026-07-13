@@ -49,13 +49,15 @@ style: |
     .contacts-grid{grid-template-columns:1fr}
     .contacts-layout{grid-template-columns:1fr}
     .form-row{grid-template-columns:1fr}
-    .contact-card__value{word-break:break-word}
+    .contact-card__value{word-break:break-word;overflow-wrap:break-word}
+    .form-card{padding:var(--space-5)}
+    .info-card{padding:var(--space-5);overflow:hidden}
+    .emergency-card{padding:var(--space-5);overflow:hidden}
     .schedule-row{flex-wrap:wrap;gap:var(--space-1)}
     .schedule-row__left{min-width:0;flex:1}
     .schedule-row__time{white-space:nowrap}
-    .info-card{overflow:hidden}
-    .emergency-card{overflow:hidden}
-    .btn--emergency{word-break:break-word;white-space:normal;text-align:center;justify-content:center}
+    .btn--emergency{word-break:break-word;white-space:normal !important;text-align:center;justify-content:center}
+    .btn{white-space:normal !important;min-width:0;overflow-wrap:break-word}
   }
 ---
 
